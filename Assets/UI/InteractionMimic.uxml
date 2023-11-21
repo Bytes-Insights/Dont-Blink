@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Button text="Close Eyes" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CloseEyesButton" style="position: absolute; bottom: 120px; right: 38px;" />
+    <ui:Button text="Open Eyes" parse-escape-sequences="true" display-tooltip-when-elided="true" name="OpenEyesButton" style="position: absolute; bottom: 68px; right: 38px;" />
+    <ui:Button text="Set Face Tracked" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TrackFaceButton" style="position: absolute; bottom: 228px; right: 38px;" />
+    <ui:Button text="Set Face Untracked" parse-escape-sequences="true" display-tooltip-when-elided="true" name="UntrackFaceButton" style="position: absolute; bottom: 173px; right: 38px;" />
+    <ui:Button text="Speak Password" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SpeakPasswordButton" style="position: absolute; bottom: 281px; right: 38px;" />
+</ui:UXML>
