@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float rotationFactorPerFrame = 5.0f;
+    public float rotationFactorPerFrame = 0.25f;
     public float standardSpeed = 5.0f;
     public PlayerInputs playerControls;
     
@@ -51,35 +51,22 @@ public class PlayerMovement : MonoBehaviour
         isShifted = !isShifted;
 
         if(isShifted)
-            playerSpeed = standardSpeed / 3;
+            playerSpeed = standardSpeed / 3.0f;
         else
             playerSpeed = standardSpeed;
     }
 
     void HandleRotation()
     {
-        /*
+        
         Vector2 mousePosition = playerControls.Player.Look.ReadValue<Vector2>();
-        mousePosition /= new Vector2(Screen.width, Screen.height);
-        mousePosition -= new Vector2(mousePosition.x - 0.5f, mousePosition.y - 0.5f);
-        var mousePositionZ = _camera.farClipPlane * 0.5f;
-        Vector3 mouseViewportPosition = _camera.ViewportToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, _camera.transform.position.z));
 
-        if(mousePosition.x > 1.5 || mousePosition.x < -0.5)
-            mousePosition.x = 0.5f;
-        if(mousePosition.y > 1.5 || mousePosition.y < -0.5)
-            mousePosition.y = 0.5f;
-
-        Debug.Log("MousePos: " + mousePosition);
-
-        Vector3 positionToLookAt;
-        positionToLookAt.x = transform.position.x + mousePosition.x;
-        positionToLookAt.y = transform.position.y + mousePosition.y;
-        //positionToLookAt.z = currentMovement.z;
-        positionToLookAt.z = 10.0f;
-
-        transform.Rotate(mousePosition.y, mousePosition.x, 0.0f);
-        */
+        if(mousePosition.x < 0.0f || mousePosition.x > Screen.width)
+            mousePosition.x = 0.0f;
+        else
+            mousePosition.x = (mousePosition.x - Screen.width * 0.5f) / (Screen.width * 0.5f);
+        
+        transform.eulerAngles += rotationFactorPerFrame * new Vector3(0, mousePosition.x, 0);
     }
 
     void Start()
@@ -93,8 +80,12 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleRotation();
         moveDirection = move.ReadValue<Vector2>();
+
         currentMovement.x = moveDirection.x * playerSpeed * Time.deltaTime;
         currentMovement.z = moveDirection.y * playerSpeed * Time.deltaTime;
-        characterController.Move(new Vector3(currentMovement.x, 0, currentMovement.z));
+
+        Vector3 movement = new Vector3(currentMovement.x, 0, currentMovement.z);
+        movement = transform.TransformDirection(movement);
+        characterController.Move(movement);
     }
 }
