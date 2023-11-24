@@ -53,6 +53,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LookGamepad"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd52817b-5db9-4644-b961-3f5d0c4eda21"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -190,33 +199,11 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c1f7a91b-d0fd-4a62-997e-7fb9b69bf235"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8c8e490b-c610-4785-884f-f04217b23ca4"",
+                    ""id"": ""7d9503c1-821f-4a0d-b180-252479fedcf0"",
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse;Touch"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3e5f5442-8668-4b27-a940-df99bad7e831"",
-                    ""path"": ""<Joystick>/{Hatswitch}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
+                    ""groups"": """",
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -240,6 +227,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Shift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7cba9705-0137-4596-bb2f-8931d4b847af"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""LookGamepad"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -830,6 +828,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Shift = m_Player.FindAction("Shift", throwIfNotFound: true);
+        m_Player_LookGamepad = m_Player.FindAction("LookGamepad", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -906,6 +905,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Shift;
+    private readonly InputAction m_Player_LookGamepad;
     public struct PlayerActions
     {
         private @PlayerInputs m_Wrapper;
@@ -913,6 +913,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Shift => m_Wrapper.m_Player_Shift;
+        public InputAction @LookGamepad => m_Wrapper.m_Player_LookGamepad;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -931,6 +932,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Shift.started += instance.OnShift;
             @Shift.performed += instance.OnShift;
             @Shift.canceled += instance.OnShift;
+            @LookGamepad.started += instance.OnLookGamepad;
+            @LookGamepad.performed += instance.OnLookGamepad;
+            @LookGamepad.canceled += instance.OnLookGamepad;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -944,6 +948,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Shift.started -= instance.OnShift;
             @Shift.performed -= instance.OnShift;
             @Shift.canceled -= instance.OnShift;
+            @LookGamepad.started -= instance.OnLookGamepad;
+            @LookGamepad.performed -= instance.OnLookGamepad;
+            @LookGamepad.canceled -= instance.OnLookGamepad;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1129,6 +1136,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnShift(InputAction.CallbackContext context);
+        void OnLookGamepad(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

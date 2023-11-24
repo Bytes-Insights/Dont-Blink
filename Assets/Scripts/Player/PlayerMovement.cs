@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool useController = false;
     public float rotationFactorPerFrame = 0.25f;
     public float standardSpeed = 5.0f;
     public PlayerInputs playerControls;
@@ -36,13 +37,17 @@ public class PlayerMovement : MonoBehaviour
         shift.Enable();
         shift.performed += Shift;
 
-        rotation = playerControls.Player.Look;
+        if(!useController)
+            rotation = playerControls.Player.Look;
+        else
+            rotation = playerControls.Player.LookGamepad;
         rotation.Enable();
     }
     
     private void OnDisable()
     {
         move.Disable();
+        rotation.Disable();
         shift.Disable();
     }
 
@@ -59,14 +64,16 @@ public class PlayerMovement : MonoBehaviour
     void HandleRotation()
     {
         
-        Vector2 mousePosition = playerControls.Player.Look.ReadValue<Vector2>();
-
+        Vector2 mousePosition = rotation.ReadValue<Vector2>();
+        
+        if(!useController){
         if(mousePosition.x < 0.0f || mousePosition.x > Screen.width)
             mousePosition.x = 0.0f;
         else
             mousePosition.x = (mousePosition.x - Screen.width * 0.5f) / (Screen.width * 0.5f);
-        
+        }
         transform.eulerAngles += rotationFactorPerFrame * new Vector3(0, mousePosition.x, 0);
+        
     }
 
     void Start()

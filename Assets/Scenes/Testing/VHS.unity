@@ -1079,6 +1079,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2819966223488727379, guid: c8381f9ef104a7a4a95ec88429ac8acb, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Gamepad
+      objectReference: {fileID: 0}
     - target: {fileID: 3455296182933350529, guid: c8381f9ef104a7a4a95ec88429ac8acb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.4072799
@@ -1122,6 +1126,14 @@ PrefabInstance:
     - target: {fileID: 5557434630160639307, guid: c8381f9ef104a7a4a95ec88429ac8acb, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891967971192154200, guid: c8381f9ef104a7a4a95ec88429ac8acb, type: 3}
+      propertyPath: useController
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891967971192154200, guid: c8381f9ef104a7a4a95ec88429ac8acb, type: 3}
+      propertyPath: rotationFactorPerFrame
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
