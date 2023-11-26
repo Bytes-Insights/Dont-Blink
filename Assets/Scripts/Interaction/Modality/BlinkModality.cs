@@ -16,6 +16,7 @@ public class BlinkModality : MonoBehaviour
 
     // Result state.
     private FacialRecognitionData resultData = new FacialRecognitionData();
+    private float lastEAR = 0.0F;
 
     // Data exchange for threads.
     private byte[] textureData;
@@ -227,6 +228,7 @@ public class BlinkModality : MonoBehaviour
             float leftEyeRatio = blinkRatio(leftEyeLandmarks, face);
             float rightEyeRatio = blinkRatio(rightEyeLandmarks, face);
             float ratio = (leftEyeRatio + rightEyeRatio) / 2;
+            lastEAR = ratio;
             if (ratio > 5)
             {
                 rec = true;
@@ -246,5 +248,15 @@ public class BlinkModality : MonoBehaviour
         UpdateSendableTexture();
         ProcessSendableTexture(sendableTexture);
         EvalData();
+    }
+
+    public FacialRecognitionData GetResultData()
+    {
+        return resultData;
+    }
+
+    public float GetLastEAR()
+    {
+        return lastEAR;
     }
 }

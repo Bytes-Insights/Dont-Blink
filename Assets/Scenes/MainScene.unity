@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 31e24068d765d4a40bdf26d2a2d4ee17, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 42da5a5ea2978254d9f1db4238e73818, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: a47829c4e50a1b84993dbbe15c0902ae, type: 3}
   m_SortingOrder: 0
@@ -870,6 +870,7 @@ GameObject:
   - component: {fileID: 974835857}
   - component: {fileID: 974835856}
   - component: {fileID: 974835858}
+  - component: {fileID: 974835859}
   m_Layer: 0
   m_Name: WebcamSupplier
   m_TagString: Untagged
@@ -912,6 +913,22 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974835855}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31923c6157a355544a5c5c648ed4642c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  supplier: {fileID: 974835856}
+  document: {fileID: 426648920}
+  modality: {fileID: 1702936281}
+  mediator: {fileID: 96771090321947962}
+--- !u!114 &974835859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974835855}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ce06daccdc471948a7ec758e902181d, type: 3}
   m_Name: 
@@ -1164,6 +1181,10 @@ PrefabInstance:
     - target: {fileID: 6775078603327378426, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156100475783239535, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_RequiresOpaqueTextureOption
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

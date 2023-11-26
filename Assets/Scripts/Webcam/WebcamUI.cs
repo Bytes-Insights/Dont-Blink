@@ -18,7 +18,6 @@ public class WebcamUI : MonoBehaviour
         if (set)
         {
             Graphics.CopyTexture(supplier.GetWebCamTexture(), uiTexture);
-            Debug.Log("Bill");
             return;
         }
 
@@ -29,7 +28,6 @@ public class WebcamUI : MonoBehaviour
             uiTexture = new Texture2D(wcTex.width, wcTex.height, TextureFormat.ARGB32, 1, false);
 
             document.rootVisualElement.Q<VisualElement>(WEBCAM).style.backgroundImage = new StyleBackground(uiTexture);
-            Debug.Log("Bill");
         }
     }
 }
