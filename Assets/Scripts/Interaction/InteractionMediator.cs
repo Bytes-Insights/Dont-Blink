@@ -30,19 +30,37 @@ public class InteractionMediator : MonoBehaviour
 
     public void PasswordSpoken()
     {
-        OnPasswordSpoken.Invoke();
+        if (OnPasswordSpoken != null)
+        {
+            OnPasswordSpoken.Invoke();
+        } else
+        {
+            Debug.LogWarning("Password spoken but no event handler was present!");
+        }
     }
 
     public void SetFaceTracked(bool tracked)
     {
         faceTracked = tracked;
-        OnFaceTrackedChanged.Invoke(tracked);
+        if (OnFaceTrackedChanged != null)
+        {
+            OnFaceTrackedChanged.Invoke(tracked);
+        } else
+        {
+            Debug.LogWarning("Face track changed but no event handler was present!");
+        }
     }
 
     public void SetEyesStatus(bool closed)
     {
         eyesClosed = closed;
-        OnEyesStatusChanged.Invoke(closed);
+        if (OnEyesStatusChanged != null)
+        {
+            OnEyesStatusChanged.Invoke(closed);
+        }
+        {
+            Debug.LogWarning("Eye status changed but no event handler was present!");
+        }
     }
 
     // --- API FOR INTERACTION RESPONSES. ---
