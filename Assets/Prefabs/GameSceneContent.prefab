@@ -223,7 +223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5580559873977389378, guid: 832ee93266671450bbef8769e12762a9, type: 3}
       propertyPath: speed
-      value: 1
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 5580559873977389378, guid: 832ee93266671450bbef8769e12762a9, type: 3}
       propertyPath: mediator
