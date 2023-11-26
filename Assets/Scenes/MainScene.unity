@@ -870,7 +870,6 @@ GameObject:
   - component: {fileID: 974835857}
   - component: {fileID: 974835856}
   - component: {fileID: 974835858}
-  - component: {fileID: 974835859}
   m_Layer: 0
   m_Name: WebcamSupplier
   m_TagString: Untagged
@@ -921,20 +920,6 @@ MonoBehaviour:
   document: {fileID: 426648920}
   modality: {fileID: 1702936281}
   mediator: {fileID: 96771090321947962}
---- !u!114 &974835859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 974835855}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ce06daccdc471948a7ec758e902181d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  supplier: {fileID: 974835856}
-  document: {fileID: 426648920}
 --- !u!1 &1246718097
 GameObject:
   m_ObjectHideFlags: 0
