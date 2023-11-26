@@ -1886,11 +1886,11 @@
     "overrideHLSLDeclaration": true,
     "hlslDeclarationOverride": 1,
     "m_Hidden": false,
-    "m_Value": 36.0,
+    "m_Value": 1.0,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 1.0,
-        "y": 40.0
+        "y": 10000.0
     }
 }
 
@@ -4368,9 +4368,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -719.0,
-            "y": -643.9999389648438,
-            "width": 119.99993896484375,
+            "x": -717.0,
+            "y": -631.0,
+            "width": 120.0,
             "height": 34.0
         }
     },
@@ -9465,7 +9465,7 @@
     "m_ShaderOutputName": "A",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 50.0,
+        "x": 10000.0,
         "y": 1.0,
         "z": 1.0,
         "w": 1.0
