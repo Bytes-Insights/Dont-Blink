@@ -8,6 +8,7 @@ public class SetupInputController : MonoBehaviour
     public UIDocument document;
     public InteractionMediator mediator;
     public BlinkingProvider blinking;
+    public BlinkModality blinkingScript;
     public float minOpenTimeForReset = 0.1F;
 
     private bool lastCapturedEyeState = false;
@@ -43,5 +44,6 @@ public class SetupInputController : MonoBehaviour
 
         sensitivityValue = document.rootVisualElement.Q<Slider>(Slider).value;
         document.rootVisualElement.Q<Label>(Sensitivity).text = sensitivityValue.ToString("0.0");
+        blinkingScript.updateSensitivity(sensitivityValue);
     }
 }

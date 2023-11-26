@@ -35,6 +35,9 @@ public class BlinkModality : MonoBehaviour
     private Mutex textureMutex = new Mutex();
     private Mutex resultMutex = new Mutex();
 
+    //Sensitivity
+    private float sensitivity = 5.0f;
+
     // --- EXTRA THREAD ---
 
     void ComputerVisionThread()
@@ -229,7 +232,7 @@ public class BlinkModality : MonoBehaviour
             float rightEyeRatio = blinkRatio(rightEyeLandmarks, face);
             float ratio = (leftEyeRatio + rightEyeRatio) / 2;
             lastEAR = ratio;
-            if (ratio > 5)
+            if (ratio > sensitivity)
             {
                 rec = true;
                 break;
@@ -258,5 +261,10 @@ public class BlinkModality : MonoBehaviour
     public float GetLastEAR()
     {
         return lastEAR;
+    }
+
+    public void updateSensitivity(float sensitivity)
+    {
+        this.sensitivity = sensitivity;
     }
 }

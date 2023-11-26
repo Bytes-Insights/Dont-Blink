@@ -673,6 +673,7 @@ MonoBehaviour:
   document: {fileID: 1317670416}
   mediator: {fileID: 1923064104}
   blinking: {fileID: 181941506}
+  blinkingScript: {fileID: 501705777}
   minOpenTimeForReset: 0.1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
