@@ -15,7 +15,7 @@ public class SimpleAngelMovement : MonoBehaviour
     void MoveAngel()
     {
         Vector3 currPos = new Vector3(transform.position.x, 0, transform.position.z);
-        Vector3 trackedPos = new Vector3(trackedObject.transform.position.x, 0, trackedObject.transform.z);
+        Vector3 trackedPos = new Vector3(trackedObject.transform.position.x, 0, trackedObject.transform.position.z);
         Vector3 result = Vector3.MoveTowards(currPos, trackedPos, speed);
         transform.position = new Vector3(result.x, transform.position.y, result.z);
     }
