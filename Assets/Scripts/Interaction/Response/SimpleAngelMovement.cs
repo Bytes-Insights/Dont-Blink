@@ -13,8 +13,16 @@ public class SimpleAngelMovement : MonoBehaviour
         mediator.OnEyesStatusChanged += OnEyesChanged;
     }
 
+    void OnDestroy()
+    {
+        mediator.OnEyesStatusChanged -= OnEyesChanged;
+    }
+
     void OnEyesChanged(bool closed)
     {
-        transform.position = Vector3.MoveTowards(transform.position, trackedObject.transform.position, speed);
+        if (closed)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, trackedObject.transform.position, speed);
+        }
     }
 }
