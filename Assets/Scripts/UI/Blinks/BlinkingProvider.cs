@@ -19,14 +19,18 @@ public class BlinkingProvider : MonoBehaviour
     {
         if (document != null && OpenEyeTexture != null && ClosedEyeTexture != null)
         {
-            document.rootVisualElement.Q<VisualElement>(Eye).style.backgroundImage = new StyleBackground(ClosedEyeTexture);
-            document.rootVisualElement.Q<Label>(BlinkLabel).text = "0";
+            document.rootVisualElement.Q<VisualElement>(Eye).style.backgroundImage = new StyleBackground(OpenEyeTexture);
+            document.rootVisualElement.Q<Label>(BlinkLabel).text = count.ToString();
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void closeEye(){
+        document.rootVisualElement.Q<VisualElement>(Eye).style.backgroundImage = new StyleBackground(ClosedEyeTexture);
+    }
+
+    public void openEye(){
+        count++;
+        document.rootVisualElement.Q<Label>(BlinkLabel).text = count.ToString();
+        document.rootVisualElement.Q<VisualElement>(Eye).style.backgroundImage = new StyleBackground(OpenEyeTexture);
     }
 }

@@ -12,10 +12,16 @@
         <ui:VisualElement name="Cam" style="flex-grow: 1; height: 50%;">
             <ui:VisualElement name="Webcam" style="flex-grow: 1; height: 50%; width: 50%; align-self: center;" />
         </ui:VisualElement>
-        <ui:VisualElement name="Slider" style="flex-grow: 1; flex-direction: row; width: 80%; max-width: 100%; -unity-text-align: middle-center; justify-content: flex-start; position: relative; top: auto; left: auto; height: 20%; align-self: center;">
-            <ui:Label tabindex="-1" text="Low" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Low" style="font-size: 20px; color: rgb(255, 255, 255); -unity-font-style: bold; align-self: center; height: 33px; width: 63px; align-items: flex-end; -unity-text-align: middle-center;" />
-            <ui:Slider picking-mode="Ignore" value="5" high-value="9" low-value="1" style="align-self: center; max-width: 80%; -unity-text-align: middle-left;" />
-            <ui:Label tabindex="-1" text="High" parse-escape-sequences="true" display-tooltip-when-elided="true" name="High" style="font-size: 20px; color: rgb(255, 255, 255); -unity-font-style: bold; align-self: center; height: 33px; width: 63px; align-items: flex-end; -unity-text-align: middle-center;" />
+        <ui:VisualElement name="SliderContainer" style="flex-grow: 1; flex-direction: column; width: 80%; max-width: 100%; -unity-text-align: middle-center; justify-content: flex-start; position: relative; top: auto; left: auto; height: 20%; align-self: center;">
+            <ui:VisualElement name="Slider" style="flex-grow: 1; flex-direction: row; align-self: flex-start; width: 100%;">
+                <ui:Label tabindex="-1" text="Low" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Low" style="font-size: 20px; color: rgb(255, 255, 255); -unity-font-style: bold; align-self: center; height: 33px; width: 63px; align-items: flex-end; -unity-text-align: middle-center;" />
+                <ui:Slider picking-mode="Ignore" value="5" high-value="9" low-value="1" name="SliderValue" style="align-self: center; max-width: 80%; -unity-text-align: middle-left;" />
+                <ui:Label tabindex="-1" text="High" parse-escape-sequences="true" display-tooltip-when-elided="true" name="High" style="font-size: 20px; color: rgb(255, 255, 255); -unity-font-style: bold; align-self: center; height: 33px; width: 63px; align-items: flex-end; -unity-text-align: middle-center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="SensititivityValue" style="flex-grow: 1; flex-direction: row; justify-content: flex-end;">
+                <ui:Label tabindex="-1" text="Sensitivity: " parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 20px; color: rgb(255, 255, 255); width: 50%; align-self: center; justify-content: flex-start; align-items: flex-end; -unity-text-align: middle-right; -unity-font-style: bold;" />
+                <ui:Label tabindex="-1" text="x" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SensitivityValue" style="font-size: 20px; -unity-font-style: bold; color: rgb(255, 255, 255); width: 50%; -unity-text-align: middle-left; border-left-width: 20px;" />
+            </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Footer" style="flex-grow: 1; height: 10%; flex-direction: row; margin-left: 80%; justify-content: space-between;">
             <ui:VisualElement name="Continue" style="flex-grow: 1; flex-direction: row;">
