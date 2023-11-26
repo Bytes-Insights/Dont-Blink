@@ -9,9 +9,9 @@ public class BlinkModality : MonoBehaviour
 {
     // Public inputs.
     public InteractionMediator mediator;
+    public WebcamSupplier camSupplier;
 
     // Textures.
-    private WebCamTexture webCamTex;
     private Texture2D sendableTexture;
 
     // Result state.
@@ -96,12 +96,6 @@ public class BlinkModality : MonoBehaviour
 
     // --- MAIN THREAD --- 
 
-    void InitializeWebcam()
-    {
-        webCamTex = new WebCamTexture(WebCamTexture.devices[0].name, 640, 480, 30);
-        webCamTex.Play();
-    }
-
     void InitializeCVThread()
     {
         var thread = new Thread(ComputerVisionThread);
@@ -110,7 +104,6 @@ public class BlinkModality : MonoBehaviour
 
     void Start()
     {
-        InitializeWebcam();
         FacialLandmarksPlugin.InitializeDLIB(Application.streamingAssetsPath + "/shape_predictor_68_face_landmarks.dat\0");
         InitializeCVThread();
     }
@@ -127,6 +120,23 @@ public class BlinkModality : MonoBehaviour
             sendableTexture = new Texture2D(640, 480, TextureFormat.RGB24, false);
             sendableTexture.Apply();
         }
+
+
+        if (camSupplier == null)
+        {
+            Debug.LogWarning("No cam supplier found!");
+            return;
+        }
+
+
+        WebCamTexture webCamTex = camSupplier.GetWebCamTexture();
+
+        if (webCamTex == null)
+        {
+            Debug.LogWarning("No webcam texture found!");
+            return; 
+        }
+
 
         if (webCamTex.width > 100)
         {
