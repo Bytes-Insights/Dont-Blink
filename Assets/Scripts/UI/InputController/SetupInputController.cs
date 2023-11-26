@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.InputSystem; 
 
 public class SetupInputController : MonoBehaviour
 {
@@ -16,16 +17,48 @@ public class SetupInputController : MonoBehaviour
     private int blinkCount = 0;
     private string Slider = "SliderValue";
     private string Sensitivity = "SensitivityValue";
-
     private float sensitivityValue;
+    private float maxValue; 
+    private float minValue;
+
+    public PlayerInputs playerControls;
+    private InputAction move;
+    private InputAction confirm;
+    private Vector2 moveDirection;
+
+    private void Awake()
+    {
+        playerControls = new PlayerInputs();
+    }
+
+    private void OnEnable()
+    {
+        move = playerControls.Player.Move;
+        move.Enable();
+
+        confirm = playerControls.Player.Confirm;
+        confirm.performed += SetSensibility;
+        confirm.Enable();
+    }
+
+    private void OnDisable()
+    {
+        move.Disable();
+    }
 
     void Start()
     {
+        minValue = document.rootVisualElement.Q<Slider>(Slider).lowValue;
+        maxValue = document.rootVisualElement.Q<Slider>(Slider).highValue;
         sensitivityValue = document.rootVisualElement.Q<Slider>(Slider).value;
     }
 
     void Update()
     {
+        moveDirection = move.ReadValue<Vector2>();
+
+        document.rootVisualElement.Q<Slider>(Slider).value += Time.deltaTime * 3 * moveDirection.x;
+
         if (mediator.EyesClosed() && !lastCapturedEyeState)
         {
             lastCapturedEyeState = true;
@@ -45,5 +78,10 @@ public class SetupInputController : MonoBehaviour
         sensitivityValue = document.rootVisualElement.Q<Slider>(Slider).value;
         document.rootVisualElement.Q<Label>(Sensitivity).text = sensitivityValue.ToString("0.0");
         blinkingScript.updateSensitivity(sensitivityValue);
+    }
+
+    private void SetSensibility(InputAction.CallbackContext ctx)
+    {
+        Debug.Log(sensitivityValue);
     }
 }
