@@ -106,6 +106,14 @@ public class BlinkModality : MonoBehaviour
         thread.Start();
     }
 
+    void Awake()
+    {
+        if(DataTransfer.instance != null && DataTransfer.instance.valueToPass != null){
+            sensitivity = DataTransfer.instance.valueToPass;
+            Debug.Log(sensitivity);
+        }
+    }
+
     void Start()
     {
         FacialLandmarksPlugin.InitializeDLIB(Application.streamingAssetsPath + "/shape_predictor_68_face_landmarks.dat\0");

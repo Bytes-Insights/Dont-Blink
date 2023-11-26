@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.InputSystem; 
+using UnityEngine.SceneManagement;
 
 public class SetupInputController : MonoBehaviour
 {
@@ -82,6 +83,7 @@ public class SetupInputController : MonoBehaviour
 
     private void SetSensibility(InputAction.CallbackContext ctx)
     {
-        Debug.Log(sensitivityValue);
+        DataTransfer.instance.valueToPass = sensitivityValue;
+        SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
     }
 }

@@ -16,4 +16,12 @@ public class WebcamSupplier : MonoBehaviour
     {
         return webCamTex;
     }
+
+    void OnDestroy()
+    {
+        if(webCamTex != null)
+        {
+            webCamTex.Stop();
+        }
+    }
 }
