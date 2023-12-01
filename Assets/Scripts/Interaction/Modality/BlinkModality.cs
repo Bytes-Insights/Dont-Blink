@@ -13,6 +13,7 @@ public class BlinkModality : MonoBehaviour
 
     // Textures.
     private Texture2D sendableTexture;
+    private Texture2D mediumTexture;
 
     // Result state.
     private FacialRecognitionData resultData = new FacialRecognitionData();
@@ -86,6 +87,7 @@ public class BlinkModality : MonoBehaviour
                     FacialLandmarksPlugin.OutPoint point = Marshal.PtrToStructure<FacialLandmarksPlugin.OutPoint>(ptr);
                     face.Add(new Vector2(point.x, point.y));
                     ptr += structSize;
+                    Debug.Log(" "+point.x + " "+ point.y);
                 }
             }
 
@@ -131,6 +133,9 @@ public class BlinkModality : MonoBehaviour
         {
             sendableTexture = new Texture2D(640, 480, TextureFormat.RGB24, false);
             sendableTexture.Apply();
+
+            mediumTexture = new Texture2D(640, 480, TextureFormat.BGRA32, false);
+            mediumTexture.Apply();
         }
 
 
@@ -152,7 +157,10 @@ public class BlinkModality : MonoBehaviour
 
         if (webCamTex.width > 100)
         {
-            sendableTexture.SetPixels32(webCamTex.GetPixels32());
+            //sendableTexture.SetPixels32(webCamTex.GetPixels32());
+            Graphics.CopyTexture(webCamTex, mediumTexture);
+            mediumTexture.Apply();
+            sendableTexture.SetPixels32(mediumTexture.GetPixels32());
             sendableTexture.Apply();
         }
     }

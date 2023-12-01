@@ -14,6 +14,7 @@ public class WebcamUIWithPoints : MonoBehaviour
 
     private VisualElement elem;
     private Texture2D uiTexture;
+    private Texture2D uiTextureRGB;
     private Texture2D indicatorTexture;
     private Texture2D activeIndicatorTexture;
     private bool set = false;
@@ -100,7 +101,15 @@ public class WebcamUIWithPoints : MonoBehaviour
     {
         if (set)
         {
+            WebCamTexture wcTex = supplier.GetWebCamTexture();
+            if(wcTex.width==640 && wcTex.height==480){
+            //Graphics.CopyTexture(supplier.GetWebCamTexture(), uiTexture);
+
             Graphics.CopyTexture(supplier.GetWebCamTexture(), uiTexture);
+            uiTexture.Apply();
+            uiTextureRGB.SetPixels32(uiTexture.GetPixels32());
+            uiTextureRGB.Apply();
+            }
             return;
         }
 
@@ -108,10 +117,11 @@ public class WebcamUIWithPoints : MonoBehaviour
         {
             set = true;
             WebCamTexture wcTex = supplier.GetWebCamTexture();
-            uiTexture = new Texture2D(wcTex.width, wcTex.height, TextureFormat.ARGB32, 1, false);
+            uiTexture = new Texture2D(640, 480, TextureFormat.BGRA32, 1, false);
+            uiTextureRGB = new Texture2D(640, 480, TextureFormat.RGB24, 1, false);
 
             elem = document.rootVisualElement.Q<VisualElement>(WEBCAM);
-            elem.style.backgroundImage = new StyleBackground(uiTexture);
+            elem.style.backgroundImage = new StyleBackground(uiTextureRGB);
 
             Debug.Log(elem.WorldToLocal(new Vector3(0, 0)));
             Debug.Log(elem.LocalToWorld(new Vector3(0, 0)));
