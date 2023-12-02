@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb413130b26258c4dbfc6632ae6fc5ed
+guid: 3c34b8e4385ec53488b7bd48e376038d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: color pupil
-    second: {fileID: 2100000, guid: 93a200181a5a86345ad0603756f3b81b, type: 2}
+    second: {fileID: 2100000, guid: 814880cb31a53274a9d752e7d8639857, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: eye
-    second: {fileID: 2100000, guid: b763ffabb97df8d44ac35260b2773ed5, type: 2}
+    second: {fileID: 2100000, guid: e287517a99e61ed4e88ba45701a74cc6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pupil
-    second: {fileID: 2100000, guid: 7781e0f261946a14583982037e8aa2e9, type: 2}
+    second: {fileID: 2100000, guid: cfff053c2a12b6f49a04ca1082c1ca10, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
