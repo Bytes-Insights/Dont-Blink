@@ -36,7 +36,7 @@ public class BlinkModality : MonoBehaviour
     private Mutex resultMutex = new Mutex();
 
     //Sensitivity
-    private float sensitivity = 5.0f;
+    private float sensitivity = 4.2f;
 
     // --- EXTRA THREAD ---
 

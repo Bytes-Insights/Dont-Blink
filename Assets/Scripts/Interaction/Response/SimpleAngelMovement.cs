@@ -25,19 +25,14 @@ public class SimpleAngelMovement : MonoBehaviour
 
     }
 
-    void Start()
-    {
-        agent.SetDestination(trackedObject.transform.position);
-    }
-
     void Update()
     {
         //agent.SetDestination(trackedObject.transform.position);
         if (mediator.EyesClosed() && !lastCapturedEyeState)
         {
             lastCapturedEyeState = true;
-            //agent.SetDestination(trackedObject.transform.position);
-            //agent.isStopped = false;
+            agent.SetDestination(trackedObject.transform.position);
+            agent.isStopped = false;
         } else if (!mediator.EyesClosed() && lastCapturedEyeState)
         {
             openTime += Time.deltaTime;
@@ -45,7 +40,7 @@ public class SimpleAngelMovement : MonoBehaviour
             {
                 lastCapturedEyeState = false;
                 openTime = 0F;
-                //agent.isStopped = true;
+                agent.isStopped = true;
             }
         }
     }
