@@ -17,7 +17,7 @@ public class SimpleAngelMovement : MonoBehaviour
 
     private bool lastCapturedEyeState = false;
     private float openTime = 0F;
-    private bool chasingMode = false;
+    private bool chasingMode = true;
     private Vector3 targetPosition;
     private float distanceThreshold = 3.0f;
     private GameObject[] rooms;
@@ -28,7 +28,7 @@ public class SimpleAngelMovement : MonoBehaviour
         targetPosition = transform.position;
         rooms = GameObject.FindGameObjectsWithTag("Room");
         if(crawl)
-            chasingMode = true;
+            chasingMode = false;
     }
 
     void Update()
@@ -71,6 +71,27 @@ public class SimpleAngelMovement : MonoBehaviour
         // TODO: This can be more complex. Angel should be able to detect sounds. Maybe the angel should wander to a random position close to the player
     }
 
+    void MoveOnBlink()
+    {
+        if (mediator.EyesClosed() && !lastCapturedEyeState)
+        {
+            lastCapturedEyeState = true;
+            agent.isStopped = false;
+            
+        } else if (!mediator.EyesClosed())
+        {
+            agent.isStopped = true;
+            if(lastCapturedEyeState){
+                openTime += Time.deltaTime;
+                    if (openTime > minOpenTimeForReset)
+                    {
+                        lastCapturedEyeState = false;
+                        openTime = 0F;
+                    }
+            }
+        }
+    }
+
     void MoveAngel()
     {
         //Angel enters chasing mode as soon as player is seen
@@ -83,25 +104,12 @@ public class SimpleAngelMovement : MonoBehaviour
         else 
             Wander();
         
-    }
-
-    void MoveOnBlink()
-    {
-        if (mediator.EyesClosed() && !lastCapturedEyeState)
+        if(moveOnNotSeen && !seePlayer())
         {
-            lastCapturedEyeState = true;
-            agent.SetDestination(trackedObject.transform.position);
             agent.isStopped = false;
-            
-        } else if (!mediator.EyesClosed() && lastCapturedEyeState)
+        }else
         {
-            openTime += Time.deltaTime;
-            if (openTime > minOpenTimeForReset)
-            {
-                lastCapturedEyeState = false;
-                openTime = 0F;
-                agent.isStopped = true;
-            }
+            MoveOnBlink();
         }
     }
 }
