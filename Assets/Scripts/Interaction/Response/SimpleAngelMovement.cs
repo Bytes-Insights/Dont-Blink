@@ -21,6 +21,7 @@ public class SimpleAngelMovement : MonoBehaviour
     private Vector3 targetPosition;
     private float distanceThreshold = 3.0f;
     private GameObject[] rooms;
+    private Plane[] cameraFrustum;
 
     void Start()
     {
@@ -49,6 +50,30 @@ public class SimpleAngelMovement : MonoBehaviour
                 return true;
             }
         }
+        return false;
+    }
+
+    //Returns true if player can see the angel in the camera
+    bool playerSeesAngel()
+    {
+        //See if angel is inside cameraViewport
+        Bounds bounds = GetComponent<BoxCollider>().bounds;
+        cameraFrustum = GeometryUtility.CalculateFrustumPlanes(Camera.main);
+        if (GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
+        {
+            RaycastHit objectHit;
+            Ray ray = new Ray(trackedObject.transform.position, transform.position - trackedObject.transform.position);
+            //If so, cast a ray against the angel to see if there's an obstacle
+            if (Physics.Raycast(ray, out objectHit))
+            {
+                if(objectHit.collider.gameObject.CompareTag("Angel"))
+                {
+                    Debug.Log("HEY!");
+                    return true;
+                }
+            }
+        }
+        Debug.Log("NADA!");
         return false;
     }
 
@@ -104,7 +129,7 @@ public class SimpleAngelMovement : MonoBehaviour
         else 
             Wander();
         
-        if(moveOnNotSeen && !seePlayer())
+        if(moveOnNotSeen && !playerSeesAngel())
         {
             agent.isStopped = false;
         }else

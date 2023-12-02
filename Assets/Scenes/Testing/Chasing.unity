@@ -1072,6 +1072,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1497223147782982885, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_TagString
+      value: Angel
+      objectReference: {fileID: 0}
     - target: {fileID: 3444836623956295028, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.3
@@ -1083,6 +1087,26 @@ PrefabInstance:
     - target: {fileID: 3444836623956295028, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.z
       value: 27.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444836623956295028, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5416406
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444836623956295028, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444836623956295028, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8406102
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444836623956295028, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444836623956295028, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -114.409
       objectReference: {fileID: 0}
     - target: {fileID: 4000712550983549955, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_Name
@@ -1102,7 +1126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4063593178434426564, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: moveOnNotSeen
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4063593178434426564, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: angelViewDistance
@@ -1110,7 +1134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4433590654260663054, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.88
+      value: 2.69
       objectReference: {fileID: 0}
     - target: {fileID: 4433590654260663054, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1160,6 +1184,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8888897267539770797, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: useController
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1170,6 +1198,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1497223147782982885, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2039590867}
+    - targetCorrespondingSourceObject: {fileID: 1497223147782982885, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2039590870}
   m_SourcePrefab: {fileID: 100100000, guid: c0928b432549d00459cd9b99746e7744, type: 3}
 --- !u!1 &1016482592
 GameObject:
@@ -1861,6 +1892,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
+--- !u!65 &2039590870
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039590864}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.8317366, y: 2.266489, z: 6.503072}
+  m_Center: {x: 0.045905113, y: 0.63324445, z: -0.07593393}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
