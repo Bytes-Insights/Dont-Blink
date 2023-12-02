@@ -11,6 +11,7 @@ public class SimpleAngelMovement : MonoBehaviour
     public float minOpenTimeForReset = 0.1F;
     public NavMeshAgent agent;
     public bool moveOnNotSeen;
+    public bool crawl;
     public float angelViewDistance;
     public float wanderRadius;
 
@@ -26,6 +27,8 @@ public class SimpleAngelMovement : MonoBehaviour
         //Original target position = self
         targetPosition = transform.position;
         rooms = GameObject.FindGameObjectsWithTag("Room");
+        if(crawl)
+            chasingMode = true;
     }
 
     void Update()
@@ -43,11 +46,9 @@ public class SimpleAngelMovement : MonoBehaviour
         {
             if(objectHit.collider.gameObject.CompareTag("Player"))
             {
-                Debug.Log("DETECTED!!!!");
                 return true;
             }
         }
-        Debug.Log("NOTHING");
         return false;
     }
 
