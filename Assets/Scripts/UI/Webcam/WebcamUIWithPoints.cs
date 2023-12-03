@@ -14,6 +14,9 @@ public class WebcamUIWithPoints : MonoBehaviour
 
     private VisualElement elem;
     private Texture2D uiTexture;
+#if (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
+    private Texture2D uiTextureRGB;
+#endif
     private Texture2D indicatorTexture;
     private Texture2D activeIndicatorTexture;
     private bool set = false;
@@ -100,7 +103,17 @@ public class WebcamUIWithPoints : MonoBehaviour
     {
         if (set)
         {
-            Graphics.CopyTexture(supplier.GetWebCamTexture(), uiTexture);
+            WebCamTexture wcTex = supplier.GetWebCamTexture();
+            if (wcTex.width == 640 && wcTex.height == 480) {
+                Graphics.CopyTexture(supplier.GetWebCamTexture(), uiTexture);
+
+#if (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
+                uiTexture.Apply();
+                uiTextureRGB.SetPixels32(uiTexture.GetPixels32());
+                uiTextureRGB.Apply();
+#endif 
+
+            }
             return;
         }
 
@@ -108,19 +121,21 @@ public class WebcamUIWithPoints : MonoBehaviour
         {
             set = true;
             WebCamTexture wcTex = supplier.GetWebCamTexture();
+
+#if (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
+            uiTexture = new Texture2D(640, 480, TextureFormat.BGRA32, 1, false);
+            uiTextureRGB = new Texture2D(640, 480, TextureFormat.RGB24, 1, false);
+#else
             uiTexture = new Texture2D(wcTex.width, wcTex.height, TextureFormat.ARGB32, 1, false);
+#endif
 
             elem = document.rootVisualElement.Q<VisualElement>(WEBCAM);
-            elem.style.backgroundImage = new StyleBackground(uiTexture);
 
-            Debug.Log(elem.WorldToLocal(new Vector3(0, 0)));
-            Debug.Log(elem.LocalToWorld(new Vector3(0, 0)));
-            Debug.Log(elem.style.position);
-            Debug.Log(elem.layout);
-            Debug.Log(elem.localBound);
-            Debug.Log(elem.worldBound);
-            Debug.Log(elem.transform.position);
-            Debug.Log(elem.contentRect.x + "/ " + elem.contentRect.y);
+#if (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
+            elem.style.backgroundImage = new StyleBackground(uiTextureRGB);
+#else
+            elem.style.backgroundImage = new StyleBackground(uiTexture);
+#endif
         }
     }
 }
