@@ -15,11 +15,11 @@ public class WebcamUI : MonoBehaviour
 
     void Update()
     {
-        if (set )
+        if (set)
         {
             WebCamTexture wcTex = supplier.GetWebCamTexture();
-            if(wcTex.width==640 && wcTex.height==480){
-            Graphics.CopyTexture(supplier.GetWebCamTexture(), uiTexture);
+            if (wcTex.width == 640 && wcTex.height == 480){
+                Graphics.CopyTexture(supplier.GetWebCamTexture(), uiTexture);
             }
             return;
         }
@@ -28,9 +28,13 @@ public class WebcamUI : MonoBehaviour
         {
             set = true;
             WebCamTexture wcTex = supplier.GetWebCamTexture();
+
+#if (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
             uiTexture = new Texture2D(640, 480, TextureFormat.BGRA32, 1, false);
-            
 			uiTexture.Apply();
+#else
+            uiTexture = new Texture2D(wcTex.width, wcTex.height, TextureFormat.ARGB32, 1, false);
+#endif
             document.rootVisualElement.Q<VisualElement>(WEBCAM).style.backgroundImage = new StyleBackground(uiTexture);
         }
     }

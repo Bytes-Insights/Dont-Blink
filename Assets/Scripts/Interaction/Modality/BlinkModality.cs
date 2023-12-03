@@ -13,7 +13,10 @@ public class BlinkModality : MonoBehaviour
 
     // Textures.
     private Texture2D sendableTexture;
+
+#if (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
     private Texture2D mediumTexture;
+#endif
 
     // Result state.
     private FacialRecognitionData resultData = new FacialRecognitionData();
@@ -87,7 +90,6 @@ public class BlinkModality : MonoBehaviour
                     FacialLandmarksPlugin.OutPoint point = Marshal.PtrToStructure<FacialLandmarksPlugin.OutPoint>(ptr);
                     face.Add(new Vector2(point.x, point.y));
                     ptr += structSize;
-                    Debug.Log(" "+point.x + " "+ point.y);
                 }
             }
 
@@ -134,8 +136,10 @@ public class BlinkModality : MonoBehaviour
             sendableTexture = new Texture2D(640, 480, TextureFormat.RGB24, false);
             sendableTexture.Apply();
 
+#if (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
             mediumTexture = new Texture2D(640, 480, TextureFormat.BGRA32, false);
             mediumTexture.Apply();
+#endif
         }
 
 
@@ -157,11 +161,14 @@ public class BlinkModality : MonoBehaviour
 
         if (webCamTex.width > 100)
         {
-            //sendableTexture.SetPixels32(webCamTex.GetPixels32());
+#if (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX)
             Graphics.CopyTexture(webCamTex, mediumTexture);
             mediumTexture.Apply();
             sendableTexture.SetPixels32(mediumTexture.GetPixels32());
             sendableTexture.Apply();
+#else
+            sendableTexture.SetPixels32(webCamTex.GetPixels32());
+#endif 
         }
     }
 
