@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7826188088778781356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FMODBanks/Desktop/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: /Users/malinm/Documents/GitHub/DH2643-Advanced-Interaction/AGI/Dont-Blink/Assets/Audio/FMODBanks/Desktop/Master.strings.bank
+  Name: FMODBanks/Desktop/Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638372548752396192
+  FileSizes:
+  - Name: 
+    Value: 948
+  Exists: 1
+--- !u!114 &-7322248550866215129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/New Event
+  m_EditorClassIdentifier: 
+  Path: event:/New Event
+  Guid:
+    Data1: 35087148
+    Data2: 1103710790
+    Data3: -497988198
+    Data4: -130158853
+  Banks:
+  - {fileID: -498409875663113240}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 73258
+--- !u!114 &-5194277607264562550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FMODBanks/Desktop/Dont-blink.bank
+  m_EditorClassIdentifier: 
+  Path: /Users/malinm/Documents/GitHub/DH2643-Advanced-Interaction/AGI/Dont-Blink/Assets/Audio/FMODBanks/Desktop/Dont-blink.bank
+  Name: FMODBanks/Desktop/Dont-blink
+  StudioPath: bank:/Dont-blink
+  lastModified: 638372548757492014
+  FileSizes:
+  - Name: 
+    Value: 966688
+  Exists: 1
+--- !u!114 &-5172270920433480463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/background-noise
+  m_EditorClassIdentifier: 
+  Path: event:/background-noise
+  Guid:
+    Data1: 1024100548
+    Data2: 1205601980
+    Data3: -1411702870
+    Data4: -896595384
+  Banks:
+  - {fileID: -5194277607264562550}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16000
+--- !u!114 &-1151832018493228079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ringo-sounds
+  m_EditorClassIdentifier: 
+  Path: event:/Ringo-sounds
+  Guid:
+    Data1: 913587694
+    Data2: 1237704246
+    Data3: -88131181
+    Data4: 1423019628
+  Banks:
+  - {fileID: -5194277607264562550}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 56258
+--- !u!114 &-498409875663113240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FMODBanks/Desktop/test.bank
+  m_EditorClassIdentifier: 
+  Path: /Users/malinm/Documents/GitHub/DH2643-Advanced-Interaction/AGI/Dont-Blink/Assets/Audio/FMODBanks/Desktop/test.bank
+  Name: FMODBanks/Desktop/test
+  StudioPath: bank:/test
+  lastModified: 638372506255007307
+  FileSizes:
+  - Name: 
+    Value: 659616
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -7826188088778781356}
+  - {fileID: 8557707132206247126}
+  - {fileID: -498409875663113240}
+  - {fileID: -5194277607264562550}
+  EditorEvents:
+  - {fileID: -7322248550866215129}
+  - {fileID: -5172270920433480463}
+  - {fileID: -1151832018493228079}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 8557707132206247126}
+  StringsBanks:
+  - {fileID: -7826188088778781356}
+  cacheTime: 638372548757492014
+  cacheVersion: 131609
+--- !u!114 &8557707132206247126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FMODBanks/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: /Users/malinm/Documents/GitHub/DH2643-Advanced-Interaction/AGI/Dont-Blink/Assets/Audio/FMODBanks/Desktop/Master.bank
+  Name: FMODBanks/Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 638372548752382371
+  FileSizes:
+  - Name: 
+    Value: 1036
+  Exists: 1
