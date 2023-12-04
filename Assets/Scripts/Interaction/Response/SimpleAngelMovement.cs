@@ -101,11 +101,11 @@ public class SimpleAngelMovement : MonoBehaviour
         if (mediator.EyesClosed() && !lastCapturedEyeState)
         {
             lastCapturedEyeState = true;
-            agent.isStopped = false;
-            
+            Vector3 point = FindPointAtFraction(agent.path.corners, 0.25F);
+            agent.transform.position = point;
+
         } else if (!mediator.EyesClosed())
         {
-            agent.isStopped = true;
             if(lastCapturedEyeState){
                 openTime += Time.deltaTime;
                     if (openTime > minOpenTimeForReset)
@@ -115,6 +115,38 @@ public class SimpleAngelMovement : MonoBehaviour
                     }
             }
         }
+    }
+
+    private Vector3 FindPointAtFraction(Vector3[] points, float fraction)
+    {
+        if (points.Length < 2)
+        {
+            Debug.LogError("Not enough points to define a path.");
+            return Vector3.zero;
+        }
+
+        float totalDistance = 0f;
+        for (int i = 0; i < points.Length - 1; i++)
+        {
+            totalDistance += Vector3.Distance(points[i], points[i + 1]);
+        }
+
+        float targetDistance = totalDistance * fraction;
+        float distanceCovered = 0f;
+
+        for (int i = 0; i < points.Length - 1; i++)
+        {
+            float distanceBetween = Vector3.Distance(points[i], points[i + 1]);
+            if (distanceCovered + distanceBetween >= targetDistance)
+            {
+                float remainingDistance = targetDistance - distanceCovered;
+                float fractionOfSegment = remainingDistance / distanceBetween;
+                return Vector3.Lerp(points[i], points[i + 1], fractionOfSegment);
+            }
+            distanceCovered += distanceBetween;
+        }
+
+        return points[points.Length - 1];
     }
 
     void MoveAngel()
