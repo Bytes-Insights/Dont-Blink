@@ -186,6 +186,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6775078603327378426}
     m_Modifications:
+    - target: {fileID: 757230826385916827, guid: 832ee93266671450bbef8769e12762a9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 3444836623956295028}
     - target: {fileID: 5229152926341174408, guid: 832ee93266671450bbef8769e12762a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -262,6 +266,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ringo
       objectReference: {fileID: 0}
+    - target: {fileID: 8803086168705959918, guid: 832ee93266671450bbef8769e12762a9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 3444836623956295028}
+    - target: {fileID: 8833453396259844363, guid: 832ee93266671450bbef8769e12762a9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 3444836623956295028}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
