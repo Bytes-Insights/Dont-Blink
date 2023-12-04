@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: /Users/malinm/Documents/GitHub/DH2643-Advanced-Interaction/AGI/Dont-Blink/Assets/Audio/FMODBanks/Desktop/Master.strings.bank
   Name: FMODBanks/Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638372548752396192
+  lastModified: 638373001235961009
   FileSizes:
   - Name: 
-    Value: 948
+    Value: 996
   Exists: 1
 --- !u!114 &-7322248550866215129
 MonoBehaviour:
@@ -62,10 +62,10 @@ MonoBehaviour:
   Path: /Users/malinm/Documents/GitHub/DH2643-Advanced-Interaction/AGI/Dont-Blink/Assets/Audio/FMODBanks/Desktop/Dont-blink.bank
   Name: FMODBanks/Desktop/Dont-blink
   StudioPath: bank:/Dont-blink
-  lastModified: 638372925364543533
+  lastModified: 638373001236602356
   FileSizes:
   - Name: 
-    Value: 976352
+    Value: 996512
   Exists: 1
 --- !u!114 &-5172270920433480463
 MonoBehaviour:
@@ -162,13 +162,41 @@ MonoBehaviour:
   - {fileID: -7322248550866215129}
   - {fileID: -5172270920433480463}
   - {fileID: -1151832018493228079}
+  - {fileID: 1449147623637606161}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8557707132206247126}
   StringsBanks:
   - {fileID: -7826188088778781356}
-  cacheTime: 638372925364543533
+  cacheTime: 638373001236602356
   cacheVersion: 131609
+--- !u!114 &1449147623637606161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ringo-alts
+  m_EditorClassIdentifier: 
+  Path: event:/Ringo-alts
+  Guid:
+    Data1: -254897925
+    Data2: 1182333483
+    Data3: 1019322252
+    Data4: 67576812
+  Banks:
+  - {fileID: -5194277607264562550}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 56500
 --- !u!114 &8557707132206247126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +212,7 @@ MonoBehaviour:
   Path: /Users/malinm/Documents/GitHub/DH2643-Advanced-Interaction/AGI/Dont-Blink/Assets/Audio/FMODBanks/Desktop/Master.bank
   Name: FMODBanks/Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 638372548752382371
+  lastModified: 638373001235943969
   FileSizes:
   - Name: 
     Value: 1036
