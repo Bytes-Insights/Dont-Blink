@@ -62,10 +62,10 @@ MonoBehaviour:
   Path: /Users/malinm/Documents/GitHub/DH2643-Advanced-Interaction/AGI/Dont-Blink/Assets/Audio/FMODBanks/Desktop/Dont-blink.bank
   Name: FMODBanks/Desktop/Dont-blink
   StudioPath: bank:/Dont-blink
-  lastModified: 638372548757492014
+  lastModified: 638372925364543533
   FileSizes:
   - Name: 
-    Value: 966688
+    Value: 976352
   Exists: 1
 --- !u!114 &-5172270920433480463
 MonoBehaviour:
@@ -115,12 +115,12 @@ MonoBehaviour:
   Banks:
   - {fileID: -5194277607264562550}
   IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 56258
+  Length: 56500
 --- !u!114 &-498409875663113240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   - {fileID: 8557707132206247126}
   StringsBanks:
   - {fileID: -7826188088778781356}
-  cacheTime: 638372548757492014
+  cacheTime: 638372925364543533
   cacheVersion: 131609
 --- !u!114 &8557707132206247126
 MonoBehaviour:
