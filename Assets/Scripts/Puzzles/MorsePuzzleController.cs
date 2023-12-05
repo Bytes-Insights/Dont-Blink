@@ -63,7 +63,7 @@ public class MorsePuzzleController : MonoBehaviour
 
     private void UpdateIdleState()
     {
-        Vector3 normal = (renderPlane.transform.rotation * Vector3.up);
+        Vector3 normal = (renderPlane.transform.rotation * Vector3.down);
         normal.y = 0;
         normal.Normalize();
 
