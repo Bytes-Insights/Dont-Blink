@@ -1076,6 +1076,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Angel
       objectReference: {fileID: 0}
+    - target: {fileID: 3053169599343838625, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 3444836623956295028, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.3
@@ -1881,6 +1885,7 @@ MonoBehaviour:
   agent: {fileID: 2039590867}
   speedTeleport: 5
   minOpenTimeForReset: 0.1
+  jumpScareCooldownInSeconds: 60
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
