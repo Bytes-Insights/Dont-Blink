@@ -68,12 +68,10 @@ public class SimpleAngelMovement : MonoBehaviour
             {
                 if(objectHit.collider.gameObject.CompareTag("Angel"))
                 {
-                    Debug.Log("HEY!");
                     return true;
                 }
             }
         }
-        Debug.Log("NADA!");
         return false;
     }
 

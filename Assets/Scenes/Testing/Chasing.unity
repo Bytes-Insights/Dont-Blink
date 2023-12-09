@@ -1118,7 +1118,7 @@ PrefabInstance:
       objectReference: {fileID: 2039590867}
     - target: {fileID: 4063593178434426564, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: crawl
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4063593178434426564, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: wanderRadius
@@ -1126,7 +1126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4063593178434426564, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: moveOnNotSeen
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4063593178434426564, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: angelViewDistance
