@@ -579,7 +579,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 630146545}
+  m_Father: {fileID: 640125155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &587931678
 CapsuleCollider:
@@ -654,9 +654,9 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587931676}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &630146545 stripped
+--- !u!4 &640125155 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3444836623956295028, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6775078603327378426, guid: c0928b432549d00459cd9b99746e7744, type: 3}
   m_PrefabInstance: {fileID: 998994734}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &640490092
@@ -1152,6 +1152,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6126855380267538234, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126855380267538234, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126855380267538234, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27.912
+      objectReference: {fileID: 0}
     - target: {fileID: 6775078603327378426, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1199,7 +1211,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3444836623956295028, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 6775078603327378426, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       insertIndex: -1
       addedObject: {fileID: 587931677}
     m_AddedComponents:
@@ -1318,6 +1330,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016482592}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1081865065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2939096807667477088, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+  m_PrefabInstance: {fileID: 998994734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1200517045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,11 +1797,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c71b7efb9b3fd4a87f2420f519a384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1778342307 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5558234001812435134, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-  m_PrefabInstance: {fileID: 998994734}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1888881111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,7 +1893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mediator: {fileID: 1759395020}
-  trackedObject: {fileID: 1778342307}
+  trackedObject: {fileID: 1081865065}
   agent: {fileID: 2039590867}
   speedTeleport: 5
   minOpenTimeForReset: 0.1
