@@ -40,7 +40,7 @@ public class PlayerControls : MonoBehaviour
         // TODO: Instead of using rigidbody.velocity we might want to use the movement logic from the old script
         //       But then we should make sure that the rigidbody itself has the X and Z position locked.
         //       We should keep it for the Y direction, as that will ensure our character is properly grounded.
-        Vector3 movement = (transform.right * right + transform.forward * forward) * speed;
+        Vector3 movement = (transform.right * right + transform.forward * forward).normalized * speed;
         rigidbody.velocity = new Vector3(movement.x, rigidbody.velocity.y, movement.z);
     }
 
