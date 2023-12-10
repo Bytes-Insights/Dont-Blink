@@ -48,7 +48,7 @@ public class PlayerControls : MonoBehaviour
 
     void UpdateCamera()
     {
-        float lookSpeed = lookSensitivity * Time.deltaTime;
+        float lookSpeed = lookSensitivity;
         float horizontal = inputActions.Camera.Horizontal.ReadValue<float>() * lookSpeed;
         float vertical = inputActions.Camera.Vertical.ReadValue<float>() * lookSpeed;
 
@@ -61,7 +61,7 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-        UpdateMovement();
         UpdateCamera();
+        UpdateMovement();
     }
 }
