@@ -11,6 +11,7 @@ public class InteractionMediator : MonoBehaviour
     // --- STATE VARIABLES. ---
     private bool faceTracked = false;
     private bool eyesClosed = false;
+    private float faceDirectionalWeight = 0F;
 
     // --- EVENT DEFINITIONS. ---
 
@@ -27,6 +28,11 @@ public class InteractionMediator : MonoBehaviour
     public event PasswordSpokenHandler OnPasswordSpoken;
 
     // --- API FOR INTERACTION MODALITIES. ---
+
+    public void SetFaceDirectionalWeight(float f)
+    {
+        faceDirectionalWeight = f;
+    }
 
     public void PasswordSpoken()
     {
@@ -73,5 +79,10 @@ public class InteractionMediator : MonoBehaviour
     public bool EyesClosed()
     {
         return eyesClosed;
+    }
+
+    public float FaceDirectionalWeight()
+    {
+        return faceDirectionalWeight;
     }
 }

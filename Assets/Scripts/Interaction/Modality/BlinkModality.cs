@@ -248,9 +248,15 @@ public class BlinkModality : MonoBehaviour
         int[] rightEyeLandmarks = { 42, 43, 44, 45, 46, 47 };
 
         bool rec = false;
+        float faceDirectionalWeight = 0F;
         for (int i = 0; i < resultData.GetFaceCount(); i++)
         {
             List<Vector2> face = resultData.GetFace(i);
+
+            Vector2 faceAnchor = midpoint(new Vector2(face[27].x, face[27].y), new Vector2(face[8].x, face[8].y));
+            float normalizedAnchorX = faceAnchor.x - 320;
+            faceDirectionalWeight = normalizedAnchorX / 320;
+
             float leftEyeRatio = blinkRatio(leftEyeLandmarks, face);
             float rightEyeRatio = blinkRatio(rightEyeLandmarks, face);
             float ratio = (leftEyeRatio + rightEyeRatio) / 2;
@@ -261,6 +267,8 @@ public class BlinkModality : MonoBehaviour
                 break;
             }
         }
+
+        mediator.SetFaceDirectionalWeight(faceDirectionalWeight);
 
         if (mediator.EyesClosed() != rec)
         {
