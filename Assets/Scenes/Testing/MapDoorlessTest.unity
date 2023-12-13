@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.03
   m_LinearFogStart: 0
   m_LinearFogEnd: 30.74
-  m_AmbientSkyColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
+  m_AmbientSkyColor: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -740,6 +740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CeilingLight (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1011,7 +1015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1175,6 +1179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CeilingLight (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1250,7 +1258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2083,6 +2091,10 @@ PrefabInstance:
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_Name
       value: CeilingLight (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3342,6 +3354,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CeilingLight (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4410,6 +4426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CeilingLight (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4676,6 +4696,10 @@ PrefabInstance:
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_Name
       value: CeilingLight (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5299,7 +5323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5398,7 +5422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5726,6 +5750,10 @@ PrefabInstance:
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_Name
       value: CeilingLight (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6357,6 +6385,10 @@ PrefabInstance:
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_Name
       value: CeilingLight (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7328,6 +7360,10 @@ PrefabInstance:
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_Name
       value: CeilingLight (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11400,6 +11436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CeilingLight (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11644,7 +11684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12294,7 +12334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12874,6 +12914,10 @@ PrefabInstance:
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_Name
       value: CeilingLight (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13739,6 +13783,10 @@ PrefabInstance:
     - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
       propertyPath: m_Name
       value: CeilingLight (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257140167596560111, guid: cbb0d815d1a190e4aafbd7ed49bedd23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
