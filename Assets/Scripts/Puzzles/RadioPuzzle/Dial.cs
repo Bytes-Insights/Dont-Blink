@@ -18,9 +18,14 @@ public class Dial : MonoBehaviour
 
     public void Update()
     {
-        float newRotation = rotation + speed * (mediator.FaceDirectionalWeight() * -1) * Time.deltaTime;
+        float newRotation = rotation + speed * (-1 * mediator.FaceDirectionalWeight()) * Time.deltaTime;
         rotation = Mathf.Clamp(newRotation, -90, 90);
 
         renderPlaneMaterial.SetFloat("_Rotation", rotation);
+    }
+
+    public float GetRotation()
+    {
+        return rotation;
     }
 }
