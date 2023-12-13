@@ -58,7 +58,7 @@ public class BlinkAngelMovement : MonoBehaviour
     {
         if (points.Length < 2)
         {
-            Debug.LogError("Not enough points to define a path.");
+            Debug.LogWarning("Not enough points to define a path.");
             return Vector3.zero;
         }
 
@@ -83,7 +83,6 @@ public class BlinkAngelMovement : MonoBehaviour
     bool AttemptJumpScare(float remainingDistance)
     {
         Vector3 currentPosition = transform.position;
-        currentPosition.y += 1; // TODO: This might be a problem, investigate this later.
 
         Vector3 direction = trackedObject.transform.position - currentPosition;
         RaycastHit hit;
@@ -102,8 +101,15 @@ public class BlinkAngelMovement : MonoBehaviour
                 NavMeshHit navHit;
                 if (NavMesh.SamplePosition(desiredPosition, out navHit, 3F, NavMesh.AllAreas))
                 {
-                    agent.transform.position = navHit.position;
-                    return true;
+                    NavMeshPath path = new NavMeshPath();
+                    if (NavMesh.CalculatePath(navHit.position, currentPosition, NavMesh.AllAreas, path)) {
+                        if (path.status == NavMeshPathStatus.PathComplete)
+                        {
+                            Debug.Log("Jumpscarin");
+                            agent.transform.position = navHit.position;
+                            return true;
+                        }
+                    }
                 }
             }
         }
