@@ -13,6 +13,7 @@ public class BlinkAngelMovement : MonoBehaviour
     public float minOpenTimeForReset = 0.1F;
     public float jumpScareCooldownInSeconds = 60F;
 
+    private bool firstActivation = false;
     private bool lastCapturedEyeState = false;
     private float openTime = 0F;
     private float jumpScareTime = 0F;
@@ -38,11 +39,31 @@ public class BlinkAngelMovement : MonoBehaviour
         jumpScareTime += Time.deltaTime;
     }
 
+    void HandleFirstActivation()
+    {
+        Vector3 currentPosition = transform.position;
+        NavMeshPath path = new NavMeshPath();
+        if (NavMesh.CalculatePath(trackedObject.transform.position, currentPosition, NavMesh.AllAreas, path))
+        {
+            if (path.status == NavMeshPathStatus.PathComplete)
+            {
+                Debug.Log("Activating " + gameObject.name);
+                firstActivation = true;
+            }
+        }
+    }
+
     void Update()
     {
         IncrementJumpScare();
 
-        MoveAngel();
+        if (!firstActivation)
+        {
+            HandleFirstActivation();
+        } else
+        {
+            MoveAngel();
+        }
     }
     private float CalculatePathDistance(Vector3[] points)
     {
