@@ -613,6 +613,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5229152926341174408}
   - component: {fileID: 5580559873977389378}
+  - component: {fileID: 22968303785694754}
+  - component: {fileID: 4557971846129858036}
   m_Layer: 0
   m_Name: Ringo
   m_TagString: Untagged
@@ -657,6 +659,55 @@ MonoBehaviour:
   crawl: 0
   angelViewDistance: 0
   wanderRadius: 0
+--- !u!114 &22968303785694754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048658232065690467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadEvent: 0
+  UnloadEvent: 0
+  Banks:
+  - FMODBanks/Desktop/Dont-blink
+  CollisionTag: 
+  PreloadSamples: 0
+--- !u!114 &4557971846129858036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048658232065690467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 913587694
+      Data2: 1237704246
+      Data3: -88131181
+      Data4: 1423019628
+    Path: event:/Ringo-sounds
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7511554388877039623
 GameObject:
   m_ObjectHideFlags: 0
