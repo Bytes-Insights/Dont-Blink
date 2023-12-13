@@ -9,6 +9,7 @@ public class MorsePuzzleController : MonoBehaviour
     public Texture2D[] idleStates;
     public Texture2D[] morseTextures;
     public Texture2D finishedTexture;
+    public Texture2D prizeTexture;
     public InteractionMediator mediator;
 
     private List<bool[]> morseStages = new List<bool[]>();
@@ -18,6 +19,15 @@ public class MorsePuzzleController : MonoBehaviour
     private int index = 0;
     private int textureCounter = 0;
     private bool finished = false;
+    private bool trulyFinished = false;
+    private float endTime = 1F;
+
+    private bool blinkStarted = false;
+    private float blinkTime = 0F;
+    private float openTime = 0F;
+
+    private bool transitioning = false;
+    private float transitionTime = 0F;
 
     private void InitMorseStages()
     {
@@ -94,13 +104,6 @@ public class MorsePuzzleController : MonoBehaviour
             renderPlaneMaterial.SetTexture("_DisplayTexture", idleStates[1]);
         }
     }
-
-    private bool blinkStarted = false;
-    private float blinkTime = 0F;
-    private float openTime = 0F;
-
-    private bool transitioning = false;
-    private float transitionTime = 0F;
 
     private void ResetBlink()
     {
@@ -193,6 +196,18 @@ public class MorsePuzzleController : MonoBehaviour
     {
         if (finished)
         {
+            if (trulyFinished)
+            {
+                return;
+            }
+
+            endTime -= Time.deltaTime;
+            if (endTime <= 0F)
+            {
+                trulyFinished = true;
+                renderPlaneMaterial.SetTexture("_DisplayTexture", prizeTexture);
+            }
+
             return;
         }
 

@@ -70,6 +70,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: ece6299677c37e147b98fe4e3e4d5776, type: 3}
   - {fileID: 2800000, guid: 16d7883c6e1872341aa99ea218601dce, type: 3}
   finishedTexture: {fileID: 2800000, guid: 1d1fc563d9e2b1c4b94cb58f90e7ac88, type: 3}
+  prizeTexture: {fileID: 2800000, guid: 756384a1c68cf8949880dbc28294c23c, type: 3}
   mediator: {fileID: 0}
 --- !u!1001 &5798775884105578386
 PrefabInstance:
