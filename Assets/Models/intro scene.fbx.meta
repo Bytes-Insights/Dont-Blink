@@ -27,6 +27,31 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: liquid tr
+    second: {fileID: 2100000, guid: c66b036c7a79c4440ae0d153a5a325c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: liquid tr cyan
+    second: {fileID: 2100000, guid: 03a9bf5d7bd47dc40bfe56adadcd2760, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: liquid tr magenta
+    second: {fileID: 2100000, guid: e4338979baaf00e4d9ee6351c8e166de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: liquid tr sth
+    second: {fileID: 2100000, guid: 19eb50d843a2a8b4da458a637fe716db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: liquid tr yellow
+    second: {fileID: 2100000, guid: 09773915e65407243974dce2890865b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: metal
     second: {fileID: 2100000, guid: 9d1316c4a0eb4e64aa0f3462c59bb7b0, type: 2}
   - first:
