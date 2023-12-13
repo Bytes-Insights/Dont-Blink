@@ -565,38 +565,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1497223147782982885, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4000712550983549955, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_Name
       value: GameSceneContent
       objectReference: {fileID: 0}
-    - target: {fileID: 4433590654260663054, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 80.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433590654260663054, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -12.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5257613288571703388, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-      propertyPath: lookSensitivity
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5639819907927216108, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-      propertyPath: agent
-      value: 
-      objectReference: {fileID: 71595845}
-    - target: {fileID: 5639819907927216108, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-      propertyPath: speedTeleport
-      value: 2.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5639819907927216108, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-      propertyPath: trackedObject
-      value: 
-      objectReference: {fileID: 662050325}
     - target: {fileID: 6775078603327378426, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -640,38 +612,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1497223147782982885, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 71595845}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0928b432549d00459cd9b99746e7744, type: 3}
---- !u!1 &71595844 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1497223147782982885, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-  m_PrefabInstance: {fileID: 71595843}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &71595845
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71595844}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 10
-  m_Acceleration: 1000000
-  avoidancePriority: 50
-  m_AngularSpeed: 1000000
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 0
 --- !u!1001 &81587056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6908,7 +6850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2566423e76b2c5f41bda7ccb5e6b189c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueToPass: 0
+  valueToPass: 4.2
 --- !u!4 &1053570928
 Transform:
   m_ObjectHideFlags: 0
