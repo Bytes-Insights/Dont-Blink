@@ -965,7 +965,7 @@ MonoBehaviour:
       Data2: 1205601980
       Data3: -1411702870
       Data4: -896595384
-    Path: event:/background-noise
+    Path: event:/regular-lights
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -1134,7 +1134,7 @@ MonoBehaviour:
       Data2: 1205601980
       Data3: -1411702870
       Data4: -896595384
-    Path: event:/background-noise
+    Path: event:/regular-lights
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -1401,7 +1401,7 @@ MonoBehaviour:
       Data2: 1205601980
       Data3: -1411702870
       Data4: -896595384
-    Path: event:/background-noise
+    Path: event:/regular-lights
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -1570,7 +1570,7 @@ MonoBehaviour:
       Data2: 1205601980
       Data3: -1411702870
       Data4: -896595384
-    Path: event:/background-noise
+    Path: event:/regular-lights
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -1816,7 +1816,7 @@ MonoBehaviour:
       Data2: 1205601980
       Data3: -1411702870
       Data4: -896595384
-    Path: event:/background-noise
+    Path: event:/regular-lights
   Event: 
   PlayEvent: 1
   StopEvent: 2

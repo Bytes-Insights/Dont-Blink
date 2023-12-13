@@ -431,7 +431,7 @@ MonoBehaviour:
       Data2: 1205601980
       Data3: -1411702870
       Data4: -896595384
-    Path: event:/background-noise
+    Path: event:/regular-lights
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -1892,18 +1892,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1497223147782982885, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1379344735}
-    - targetCorrespondingSourceObject: {fileID: 5558234001812435134, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1863973232}
-    - targetCorrespondingSourceObject: {fileID: 5558234001812435134, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1863973238}
   m_SourcePrefab: {fileID: 100100000, guid: c0928b432549d00459cd9b99746e7744, type: 3}
---- !u!1 &1863973228 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5558234001812435134, guid: c0928b432549d00459cd9b99746e7744, type: 3}
-  m_PrefabInstance: {fileID: 1863973227}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1863973229 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1497223147782982885, guid: c0928b432549d00459cd9b99746e7744, type: 3}
@@ -1922,43 +1911,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mediator: {fileID: 96771090321947962}
-  trackedObject: {fileID: 1863973228}
+  trackedObject: {fileID: 0}
   speed: 3.2
   minOpenTimeForReset: 0.1
---- !u!114 &1863973232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863973228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 1863973228}
---- !u!65 &1863973238
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863973228}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.7983108, y: 4.5925713, z: 1.476125}
-  m_Center: {x: -0.39915574, y: -1.7962866, z: 0.23806268}
 --- !u!1001 &2059383573
 PrefabInstance:
   m_ObjectHideFlags: 0
