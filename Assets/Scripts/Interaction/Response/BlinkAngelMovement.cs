@@ -179,7 +179,7 @@ public class BlinkAngelMovement : MonoBehaviour
             {
                 // TODO: In the else case, we could trigger the jumpscare I guess?
                 percentageToMove = speedTeleport / remainingDistance;
-            }else{
+            }else if(CanGameOverPlayer()){
                 GameOverController.Activate();
             }
 

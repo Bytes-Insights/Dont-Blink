@@ -17,6 +17,8 @@ public class GameOverController : MonoBehaviour
     public VideoPlayer videoPlayer;
     public AudioClip chocked; 
     public AudioClip noise;
+    public GameObject Ringo;
+    public GameObject Kfc;
 
     private Material VHS;
     private RawImage AngelEyeLayout;
@@ -57,14 +59,31 @@ public class GameOverController : MonoBehaviour
         }
     }
 
+    private void ResetPositions()
+    {
+        //Select respawn room depending on angel that killed you
+        if(Vector3.Distance(Ringo.transform.position, transform.position) < Vector3.Distance (Kfc.transform.position, transform.position))
+        {
+            transform.position = new Vector3(37.89f, 1.01f, 46.31f);
+        }else
+        {
+            transform.position = new Vector3(-28.8f, 1.01f, 61f);
+        }
+        //Reset angel positions
+        Ringo.transform.position = new Vector3(81f, 0f, -12.5f);
+        Kfc.transform.position = new Vector3(-66.1f, 1.73f, -5.5f);
+        isActive=false;
+    }
+
     //Activates white noise
     IEnumerator runAnimation(float noiseTime)
     {
+        gameOver.SetActive(true);
+        AngelEyeLayout.texture = gameOverVideo;
         audioData.volume  = 0.05f;
         audioData.clip = noise;
         audioData.Play();
         VHS.SetFloat("_Intensity", 9999.0f);
-        gameOver.SetActive(true);
         //Make effect invisible
         AngelEyeLayout.color = Color.black;
         
@@ -119,6 +138,17 @@ public class GameOverController : MonoBehaviour
         AngelEyeLayout.texture = gameOverVideo;
 
         yield return new WaitForSeconds(noiseTime*3);
-        SceneManager.LoadScene("MainScene");
+
+        newPosition = new Vector3(cameraPosition.x, cameraPosition.y, cameraPosition.z);
+        Camera.main.transform.position = newPosition;
+        newRotation = Quaternion.Euler(cameraRotation.x, cameraRotation.y, cameraRotation.z);
+        Camera.main.transform.rotation = newRotation;
+        audioData.Stop();
+        AngelEyeLayout.texture = null;
+        
+        gameOver.SetActive(false);
+        playerControls.enabled = true;
+        ResetPositions();
+        VHS.SetFloat("_Intensity", 5000.0f);
     } 
 }
