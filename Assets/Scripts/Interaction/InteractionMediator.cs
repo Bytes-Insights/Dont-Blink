@@ -39,6 +39,7 @@ public class InteractionMediator : MonoBehaviour
     public void SetFaceAmount(int faces)
     {
         faceCount = faces;
+        faceRecognitionController.updateFace(false);
     }
 
     public void PasswordSpoken()
