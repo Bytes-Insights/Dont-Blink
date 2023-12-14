@@ -749,6 +749,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6594702516293283346, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_TagString
+      value: Angel
+      objectReference: {fileID: 0}
     - target: {fileID: 6681492859509106951, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
@@ -812,6 +816,10 @@ PrefabInstance:
     - target: {fileID: 7269746877423975490, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545699938470028411, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_TagString
+      value: Angel
       objectReference: {fileID: 0}
     - target: {fileID: 8173425926352462523, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: Kfc
@@ -906,6 +914,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2939096807667477088, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       insertIndex: -1
       addedObject: {fileID: 662050333}
+    - targetCorrespondingSourceObject: {fileID: 2939096807667477088, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 662050341}
   m_SourcePrefab: {fileID: 100100000, guid: c0928b432549d00459cd9b99746e7744, type: 3}
 --- !u!114 &71595844 stripped
 MonoBehaviour:
@@ -19053,6 +19064,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be692ff37bd1d5a4b9b44239550b369d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &662050341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662050325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c96a0208dcfc844b439a4309bade14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 6d481aec0f8e2ef4ab933cd8e913730b, type: 2}
 --- !u!1001 &667556251
 PrefabInstance:
   m_ObjectHideFlags: 0
