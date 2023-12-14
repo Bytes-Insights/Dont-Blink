@@ -139,6 +139,21 @@ public class BlinkAngelMovement : MonoBehaviour
         return false;
     }
 
+    bool CanGameOverPlayer()
+    {
+        Vector3 currentPosition = transform.position;
+        NavMeshPath path = new NavMeshPath();
+        if (NavMesh.CalculatePath(trackedObject.transform.position, currentPosition, NavMesh.AllAreas, path))
+        {
+            if (path.status == NavMeshPathStatus.PathComplete && CalculatePathDistance(path.corners) < speedTeleport)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     void MoveAngel()
     {
         agent.SetDestination(trackedObject.transform.position);
