@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class RadioPuzzleController : MonoBehaviour
 {
+    // Audio clip indices.
+    private const int IDX_STATIC = 0;
+    private const int IDX_LOADING = 1;
+    private const int IDX_EIGHTY_NINE = 2;
+    private const int IDX_NINETY_EIGHT = 3;
+    private const int IDX_AFRAID = 4;
+    private const int IDX_RICK = 5;
+
     public Dial dial;
     public GameObject player;
     public float activationDistance = 3F;
@@ -11,7 +19,11 @@ public class RadioPuzzleController : MonoBehaviour
     public float completeTime = 2F;
     public float[] targetFrequencies;
     public GameObject[] stageIndicators;
+    public GameObject[] audioClips;
 
+    private int currentAudioClip = -1;
+    private bool easterEggActivated = false;
+    private float easterEggTimeLeft = 10F;
     private bool active = false;
     private bool finished = false;
     private int stage = 0;
@@ -22,6 +34,7 @@ public class RadioPuzzleController : MonoBehaviour
     {
         dial.gameObject.SetActive(false);
         HideIndicators();
+        DisableAllAudioClips();
     }
 
     void HideIndicators()
@@ -75,6 +88,14 @@ public class RadioPuzzleController : MonoBehaviour
         stageIndicators[stage].SetActive(true);
     }
 
+    bool IsAtFrequency(float targetFrequency)
+    {
+        float rotation = dial.GetRotation();
+        float normalized = (rotation + 90) / 180;
+        float frequency = 87F + (normalized * (105 - 87));
+        return Mathf.Abs(frequency - targetFrequency) < tolerance;
+    }
+
     void UpdateActive()
     {
         if ((player.transform.position - gameObject.transform.position).magnitude > activationDistance)
@@ -83,12 +104,24 @@ public class RadioPuzzleController : MonoBehaviour
             return;
         }
 
-        float rotation = dial.GetRotation();
-        float normalized = (rotation + 90) / 180;
-        float frequency = 87F + (normalized * (105 - 87));
+        if (!easterEggActivated)
+        {
+            if (IsAtFrequency(87))
+            {
+                easterEggTimeLeft -= Time.deltaTime;
+                if (easterEggTimeLeft <= 0)
+                {
+                    easterEggActivated = true;
+                }
+            }
+            else
+            {
+                easterEggTimeLeft = 10F;
+            }
+        }
 
         float targetFrequency = targetFrequencies[stage];
-        bool inRange = Mathf.Abs(frequency - targetFrequency) < tolerance;
+        bool inRange = IsAtFrequency(targetFrequency);
 
         if (!inZone && inRange)
         {
@@ -107,8 +140,84 @@ public class RadioPuzzleController : MonoBehaviour
         }
     }
 
+    void ApplyAudioClip(int index)
+    {
+        if (currentAudioClip != -1)
+        {
+            audioClips[currentAudioClip].SetActive(false);
+        }
+
+        currentAudioClip = index;
+
+        audioClips[currentAudioClip].SetActive(true);
+    }
+
+    void DisableAllAudioClips()
+    {
+        foreach (GameObject clip in audioClips)
+        {
+            clip.SetActive(false);
+        }
+    }
+
+    void UpdateAudioClip()
+    {
+        if (finished)
+        {
+            if (currentAudioClip != IDX_AFRAID)
+            {
+                ApplyAudioClip(IDX_AFRAID);
+            }
+            return;
+        }
+
+        if (active && IsAtFrequency(targetFrequencies[stage]))
+        {
+            if (currentAudioClip != IDX_LOADING)
+            {
+                ApplyAudioClip(IDX_LOADING);
+            }
+        }
+        else if (stage > 0 && IsAtFrequency(targetFrequencies[0]))
+        {
+            if (currentAudioClip != IDX_EIGHTY_NINE)
+            {
+                ApplyAudioClip(IDX_EIGHTY_NINE);
+            }
+        }
+        else if (stage > 1 && IsAtFrequency(targetFrequencies[1]))
+        {
+            if (currentAudioClip != IDX_NINETY_EIGHT)
+            {
+                ApplyAudioClip(IDX_NINETY_EIGHT);
+            }
+        } else if (easterEggActivated && IsAtFrequency(87))
+        {
+            if (currentAudioClip != IDX_RICK)
+            {
+                ApplyAudioClip(IDX_RICK);
+            }
+        } else if (active)
+        {
+            if (currentAudioClip != IDX_STATIC)
+            {
+                ApplyAudioClip(IDX_STATIC);
+            }
+        } else
+        {
+            if (currentAudioClip != -1)
+            {
+                currentAudioClip = -1;
+                DisableAllAudioClips();
+            }
+        }
+    }
+
+
     void Update()
     {
+        UpdateAudioClip();
+
         if (finished)
         {
             return;
