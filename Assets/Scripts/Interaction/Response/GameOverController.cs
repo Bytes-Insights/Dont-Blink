@@ -20,7 +20,7 @@ public class GameOverController : MonoBehaviour
     public GameObject Ringo;
     public GameObject Kfc;
 
-    private Material VHS;
+    public Material VHS;
     private RawImage AngelEyeLayout;
     private AudioSource audioData;
     private bool isActive;
@@ -31,9 +31,9 @@ public class GameOverController : MonoBehaviour
         isActive = false;
         audioData = GetComponent<AudioSource>();
         //Get VHS Material
-        FullScreenPassRendererFeature feature = (FullScreenPassRendererFeature) data.rendererFeatures.Find(renderFeature => (renderFeature.GetType() == typeof(FullScreenPassRendererFeature)));
-        VHS = feature.passMaterial;
-        VHS.SetFloat("_Intensity", 5000.0f);
+        //FullScreenPassRendererFeature feature = (FullScreenPassRendererFeature) data.rendererFeatures.Find(renderFeature => (renderFeature.GetType() == typeof(FullScreenPassRendererFeature)));
+        //VHS = feature.passMaterial;
+        VHS.SetFloat("_Intensity", 9999.0f);
         //Get layout 
         AngelEyeLayout = gameOver.GetComponent<RawImage>();
 
@@ -151,4 +151,9 @@ public class GameOverController : MonoBehaviour
         ResetPositions();
         VHS.SetFloat("_Intensity", 5000.0f);
     } 
+
+    public bool IsActive()
+    {
+        return isActive;
+    }
 }
