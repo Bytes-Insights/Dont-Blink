@@ -846,6 +846,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 453121745}
     - target: {fileID: 8173425926352462523, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: VHS
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 0b452faca5b22cc40a6b0815dc25f044, type: 3}
+    - target: {fileID: 8173425926352462523, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: Ringo
       value: 
       objectReference: {fileID: 164288419}
@@ -19127,6 +19131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 6d481aec0f8e2ef4ab933cd8e913730b, type: 2}
+  gameOver: {fileID: 662050334}
 --- !u!1001 &667556251
 PrefabInstance:
   m_ObjectHideFlags: 0
