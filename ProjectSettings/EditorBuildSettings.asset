@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: bdd6aee74943aea44afe6c79f1050491
+  - enabled: 1
     path: Assets/Scenes/SensitivityAdjusting.unity
     guid: be6af355c44c67148bc69c801bee62de
   - enabled: 1

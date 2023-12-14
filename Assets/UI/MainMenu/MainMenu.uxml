@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="width: 100%; height: 100%; flex-direction: row;">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/UI/Words/AFRAID.png?fileID=2800000&amp;guid=6656f17b2da444a4fa9a8f18c3257bc0&amp;type=3#AFRAID&apos;); -unity-background-scale-mode: scale-to-fit; position: absolute; height: 35px; width: 96px; top: 61px; left: 7px; rotate: -30deg;" />
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/UI/Words/QuestionMarks.png?fileID=2800000&amp;guid=de430c753f6d4fa45b645a353e7864ad&amp;type=3#QuestionMarks&apos;); -unity-background-scale-mode: scale-to-fit; position: absolute; height: 35px; width: 96px; top: 23px; left: 73px; rotate: -30deg;" />
+        <ui:VisualElement name="Menu" style="flex-grow: 1; width: 100%;">
+            <ui:VisualElement style="flex-grow: 3; background-image: url(&apos;project://database/Assets/UI/MainMenu/Dont%20Blink.png?fileID=2800000&amp;guid=a960a91c3d7943b49b80c11e873612bd&amp;type=3#Dont Blink&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/UI/MainMenu/START.png?fileID=2800000&amp;guid=e57daada70ccc1046b5149deef686836&amp;type=3#START&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            <ui:VisualElement style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Space" style="flex-grow: 1; width: 100%;" />
+    </ui:VisualElement>
+</ui:UXML>
