@@ -27773,8 +27773,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   document: {fileID: 1648813198}
-  Texture_OK: {fileID: 2800000, guid: 578469b29ff0d93428177428bd630c72, type: 3}
-  Texture_NO: {fileID: 2800000, guid: 1d81bb9778499154ebf97a76fd39f8ee, type: 3}
+  Texture_OK: {fileID: 2800000, guid: 603bc0aa2377d3a438ffc5e274ed09f9, type: 3}
+  Texture_NO: {fileID: 2800000, guid: dd64c7438bbb5f744b6d19077c772521, type: 3}
 --- !u!64 &1698341000
 MeshCollider:
   m_ObjectHideFlags: 0
