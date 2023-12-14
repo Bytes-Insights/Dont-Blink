@@ -45,6 +45,7 @@ public class SetupInputController : MonoBehaviour
     private void OnDisable()
     {
         move.Disable();
+        confirm.performed -= SetSensibility;
     }
 
     void Start()
