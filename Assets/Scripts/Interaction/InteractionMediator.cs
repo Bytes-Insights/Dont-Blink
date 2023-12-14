@@ -13,6 +13,7 @@ public class InteractionMediator : MonoBehaviour
     private bool eyesClosed = false;
     private float faceDirectionalWeight = 0F;
     private int faceCount = 0;
+    public FaceRecognitionController faceRecognitionController;
 
     // --- EVENT DEFINITIONS. ---
 
@@ -54,6 +55,7 @@ public class InteractionMediator : MonoBehaviour
     public void SetFaceTracked(bool tracked)
     {
         faceTracked = tracked;
+        faceRecognitionController.updateFace(tracked);
         if (OnFaceTrackedChanged != null)
         {
             OnFaceTrackedChanged.Invoke(tracked);
@@ -79,7 +81,7 @@ public class InteractionMediator : MonoBehaviour
 
     public int FaceAmount()
     {
-        return FaceAmount;
+        return faceCount;
     }
 
     public bool FaceTracked()
