@@ -5,13 +5,15 @@ using Whisper.Utils;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
+namespace Whisper.Samples
+{
 public class VoiceControl : MonoBehaviour
 {
-    //public WhisperManager whisper;
-    //public MicrophoneRecord microphoneRecord;
+    public WhisperManager whisper;
+    public MicrophoneRecord microphoneRecord;
     public PlayerInputActions inputActions;
 
-    //private WhisperStream _stream;
+    private WhisperStream _stream;
     private InputAction confirm;
 
     void OnEnable()
@@ -33,18 +35,36 @@ public class VoiceControl : MonoBehaviour
     // Start is called before the first frame update
     private async void Start()
     {
-        /*_stream = await whisper.CreateStream(microphoneRecord);
+        _stream = await whisper.CreateStream(microphoneRecord);
         _stream.OnResultUpdated += OnResult;
-        _stream.OnSegmentUpdated += OnSegmentUpdated;
-        _stream.OnSegmentFinished += OnSegmentFinished;
-        _stream.OnStreamFinished += OnFinished;
 
-        microphoneRecord.OnRecordStop += OnRecordStop;
-        button.onClick.AddListener(OnButtonPressed);*/
+        Debug.Log("READY!");
     }
 
     private void Record(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Pressed");
+        if (!microphoneRecord.IsRecording)
+        {
+            _stream.StartStream();
+            microphoneRecord.StartRecord();
+            Debug.Log("Recording");
+        }
+        else{
+            microphoneRecord.StopRecord();
+            Debug.Log("Stopped");
+        }
     }
+
+    private void OnResult(string result)
+    {
+        Debug.Log(result);
+        if(result.Contains("I am not afraid"))
+        {
+            Debug.Log("correct");
+            //TODO
+        }
+    }
+
+
+}
 }
