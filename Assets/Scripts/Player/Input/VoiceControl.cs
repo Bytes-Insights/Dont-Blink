@@ -5,16 +5,23 @@ using Whisper.Utils;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace Whisper.Samples
-{
 public class VoiceControl : MonoBehaviour
 {
-    public WhisperManager whisper;
+    public Whisper.WhisperManager whisper;
     public MicrophoneRecord microphoneRecord;
     public PlayerInputActions inputActions;
+    public GameObject indicator;
 
-    private WhisperStream _stream;
+    private Whisper.WhisperStream _stream;
     private InputAction confirm;
+
+    public void Activate()
+    {
+        indicator.SetActive(true);
+
+        confirm.Enable();
+        confirm.performed += Record;
+    }
 
     void OnEnable()
     {
@@ -22,19 +29,17 @@ public class VoiceControl : MonoBehaviour
         {
             inputActions = new PlayerInputActions();
         }
-    
         confirm = inputActions.Actions.Confirm;
-        confirm.Enable();
-        confirm.performed += Record;
     }
 
     void OnDisable()
     {
         confirm.Disable();
     }
-    // Start is called before the first frame update
+
     private async void Start()
     {
+        indicator.SetActive(false);
         _stream = await whisper.CreateStream(microphoneRecord);
         _stream.OnResultUpdated += OnResult;
 
@@ -44,24 +49,22 @@ public class VoiceControl : MonoBehaviour
     {
         if (!microphoneRecord.IsRecording)
         {
+            indicator.SetActive(false);
             _stream.StartStream();
             microphoneRecord.StartRecord();
         }
-        else{
+        else
+        {
+            indicator.SetActive(true);
             microphoneRecord.StopRecord();
         }
     }
 
     private void OnResult(string result)
     {
-        Debug.Log(result);
         if(result.Contains("I am not afraid"))
         {
             Debug.Log("correct");
-            //TODO
         }
     }
-
-
-}
 }

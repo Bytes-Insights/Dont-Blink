@@ -58,9 +58,9 @@ MonoBehaviour:
   initialPrompt: 
   stepSec: 3
   keepSec: 0.2
-  lengthSec: 10
+  lengthSec: 5
   updatePrompt: 1
-  dropOldBuffer: 0
+  dropOldBuffer: 1
   useVad: 1
   tokensTimestamps: 0
   speedUp: 0
@@ -245,7 +245,6 @@ GameObject:
   - component: {fileID: 7495059002336304255}
   - component: {fileID: 745202305721512541}
   - component: {fileID: 595330229376882275}
-  - component: {fileID: 1002714620027388780}
   - component: {fileID: 3591644124283659396}
   - component: {fileID: 5809955653316784410}
   m_Layer: 0
@@ -386,22 +385,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 745202305721512541}
   camera: {fileID: 7795544320895979403}
+  wordsController: {fileID: 0}
   speed: 5
   lookSensitivity: 90
---- !u!114 &1002714620027388780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7528899441835519071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5807009739d0c14099b7adfe33a61a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whisper: {fileID: 1598651527352182016}
-  microphoneRecord: {fileID: 6143632096937782816}
 --- !u!114 &3591644124283659396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,6 +408,8 @@ MonoBehaviour:
   videoPlayer: {fileID: 0}
   chocked: {fileID: 0}
   noise: {fileID: 0}
+  Ringo: {fileID: 0}
+  Kfc: {fileID: 0}
 --- !u!82 &5809955653316784410
 AudioSource:
   m_ObjectHideFlags: 0
