@@ -17,6 +17,8 @@ public class WallsPuzzleController : MonoBehaviour
 
     private int currentIndex = 0;
 
+    public WordsUIController wordsController;
+
     public void Start()
     {
         renderPlaneMaterial = renderPlane.GetComponent<MeshRenderer>().material;
@@ -48,6 +50,7 @@ public class WallsPuzzleController : MonoBehaviour
         if (currentIndex == 3)
         {
             finished = true;
+            wordsController.setNotWord();
             renderPlaneMaterial.SetTexture("_DisplayTexture", finishTexture);
         } else
         {

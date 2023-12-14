@@ -14,6 +14,7 @@ public class WordsUIController : MonoBehaviour
     public Texture2D Texture_Afraid;
     public Texture2D Texture_QuestionMarks;
 
+    private VisualElement root;
     private VisualElement Title;
     private VisualElement Word_IAm;
     private VisualElement Word_Not;
@@ -24,6 +25,8 @@ public class WordsUIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        root = wordsDocument.rootVisualElement.Q("Menu");
+
         Title = wordsDocument.rootVisualElement.Q("CollectedWords");
         Title.style.backgroundImage = new StyleBackground(Texture_Title);
 
@@ -31,10 +34,12 @@ public class WordsUIController : MonoBehaviour
         Word_IAm.style.backgroundImage = new StyleBackground(Texture_QuestionMarks);
 
         Word_Not = wordsDocument.rootVisualElement.Q("NOT");
-        Word_IAm.style.backgroundImage = new StyleBackground(Texture_QuestionMarks);
+        Word_Not.style.backgroundImage = new StyleBackground(Texture_QuestionMarks);
 
         Word_Afraid = wordsDocument.rootVisualElement.Q("AFRAID");
-        Word_IAm.style.backgroundImage = new StyleBackground(Texture_QuestionMarks);
+        Word_Afraid.style.backgroundImage = new StyleBackground(Texture_QuestionMarks);
+
+        root.visible = false;
     }
 
     public void setIamWord()
@@ -44,12 +49,12 @@ public class WordsUIController : MonoBehaviour
 
     public void setNotWord()
     {
-        Word_IAm.style.backgroundImage = new StyleBackground(Texture_Not);
+        Word_Not.style.backgroundImage = new StyleBackground(Texture_Not);
     }
 
     public void setAfraidWord()
     {
-        Word_IAm.style.backgroundImage = new StyleBackground(Texture_Afraid);
+        Word_Afraid.style.backgroundImage = new StyleBackground(Texture_Afraid);
     }
 
     public void show(bool show)
@@ -58,11 +63,11 @@ public class WordsUIController : MonoBehaviour
         {
             if(shown)
             {
-            shown = false;
-            wordsDocument.enabled = false;
+                shown = false;
+                root.visible = false;
             }else{
                 shown = true;
-                wordsDocument.enabled = true;
+                root.visible = true;
             }
         } 
     }

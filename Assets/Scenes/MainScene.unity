@@ -22907,6 +22907,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 662050325}
+    - target: {fileID: 1924986799169610410, guid: fd3ad26a8dc427d44bfe34e9c58c390c, type: 3}
+      propertyPath: wordsController
+      value: 
+      objectReference: {fileID: 1959453524}
     - target: {fileID: 2128549346245167545, guid: fd3ad26a8dc427d44bfe34e9c58c390c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -27273,6 +27277,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 662050325}
+    - target: {fileID: 6508147039987421238, guid: dcbf60713876be14b9813c334165fc5c, type: 3}
+      propertyPath: wordsController
+      value: 
+      objectReference: {fileID: 1959453524}
     - target: {fileID: 7399971955546030172, guid: dcbf60713876be14b9813c334165fc5c, type: 3}
       propertyPath: m_Name
       value: RadioPuzzle
@@ -28892,7 +28900,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959453518}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -29390,6 +29398,10 @@ PrefabInstance:
       propertyPath: mediator
       value: 
       objectReference: {fileID: 677818698}
+    - target: {fileID: 1681945817711565515, guid: bc7644b593855ca4491ec47550053643, type: 3}
+      propertyPath: wordsController
+      value: 
+      objectReference: {fileID: 1959453524}
     - target: {fileID: 5845522598381937697, guid: bc7644b593855ca4491ec47550053643, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.713509

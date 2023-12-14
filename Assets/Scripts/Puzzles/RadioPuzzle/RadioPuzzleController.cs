@@ -30,6 +30,8 @@ public class RadioPuzzleController : MonoBehaviour
     private bool inZone = false;
     private float timeLeft = 0F;
 
+    public WordsUIController wordsController;
+
     void Start()
     {
         dial.gameObject.SetActive(false);
@@ -71,6 +73,7 @@ public class RadioPuzzleController : MonoBehaviour
     void Finish()
     {
         finished = true;
+        wordsController.setAfraidWord();
         ChangeActivation(false);
     }
 

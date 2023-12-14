@@ -29,6 +29,8 @@ public class MorsePuzzleController : MonoBehaviour
     private bool transitioning = false;
     private float transitionTime = 0F;
 
+    public WordsUIController wordsController;
+
     private void InitMorseStages()
     {
         morseStages.Add(new bool[] { false, false, false });
@@ -57,6 +59,7 @@ public class MorsePuzzleController : MonoBehaviour
     private void FinishPuzzle()
     {
         finished = true;
+        wordsController.setIamWord();
         renderPlaneMaterial.SetTexture("_DisplayTexture", finishedTexture);
     }
 
