@@ -8,20 +8,23 @@ using UnityEngine.Video;
 
 public class GameOverController : MonoBehaviour
 {
-    public WebcamSupplier supplier;
     public GameObject gameOver;
-    public Canvas webCanvas;
     public UniversalRendererData data;
     public PlayerControls playerControls;
     public Texture gameOverVideo;
+    public Texture brokenGlass;
     public VideoPlayer videoPlayer;
+    public AudioClip chocked; 
+    public AudioClip noise;
 
     private Material VHS;
     private RawImage AngelEyeLayout;
+    private AudioSource audioData;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
         //Get VHS Material
         FullScreenPassRendererFeature feature = (FullScreenPassRendererFeature) data.rendererFeatures.Find(renderFeature => (renderFeature.GetType() == typeof(FullScreenPassRendererFeature)));
         VHS = feature.passMaterial;
@@ -45,36 +48,69 @@ public class GameOverController : MonoBehaviour
     {
         //Freeze player
         playerControls.enabled = false;
-        //Deactivate webcam
-        supplier.enabled = false;
-        webCanvas.GetComponent<UIDocument>().enabled = false;
         //Set white noise
-        StartCoroutine(runAnimation(2f));
+        StartCoroutine(runAnimation(1f));
     }
 
     //Activates white noise
     IEnumerator runAnimation(float noiseTime)
     {
+        audioData.volume  = 0.05f;
+        audioData.clip = noise;
+        audioData.Play();
         VHS.SetFloat("_Intensity", 9999.0f);
         gameOver.SetActive(true);
+        //Make effect invisible
         AngelEyeLayout.color = Color.black;
-        //Play eye video
-        yield return new WaitForSeconds(noiseTime);
         
+        //Turn down noise
+        yield return new WaitForSeconds(noiseTime);
+        audioData.Stop();
         VHS.SetFloat("_Intensity", 5000.0f);
+
+        //Make effect visible
+        AngelEyeLayout.color = Color.white;
+        
+        //Turn up noise
+        yield return new WaitForSeconds(noiseTime);
+        audioData.Play();
+        VHS.SetFloat("_Intensity", 9999.0f);
+
+        //Make effect invisible
+        AngelEyeLayout.color = Color.black;
+
+        //Move to floor 
+        Vector3 cameraPosition = Camera.main.transform.position;
+        Vector3 newPosition = new Vector3(cameraPosition.x, cameraPosition.y - 1.3f, cameraPosition.z);
+        Camera.main.transform.position = newPosition;
+
+        //Rotate Camera
+        Vector3 cameraRotation = Camera.main.transform.rotation.eulerAngles;
+        Quaternion newRotation = Quaternion.Euler(cameraRotation.x, cameraRotation.y, cameraRotation.z + 60.0f);
+        Camera.main.transform.rotation = newRotation;
+
+        //Turn down noise
+        yield return new WaitForSeconds(noiseTime);
+        VHS.SetFloat("_Intensity", 5000.0f);
+
+        //Make broken glass visible
+        AngelEyeLayout.texture = brokenGlass;
+
+        audioData.Stop();
+        audioData.volume  = 1f;
+        audioData.clip = chocked;
+        audioData.Play();
+        
+        //Make effect visible
         AngelEyeLayout.color = Color.white;
 
-        // Start playing the video
-        //videoPlayer.Play();
-        //Play eye video
-        
         yield return new WaitForSeconds(noiseTime);
+        audioData.Stop();
+        audioData.volume  = 0.05f;
+        audioData.clip = noise;
+        audioData.Play();
         VHS.SetFloat("_Intensity", 9999.0f);
         AngelEyeLayout.color = Color.black;
-        
-        yield return new WaitForSeconds(noiseTime);
-        gameOver.SetActive(false);
-        AngelEyeLayout.texture = null;
-        VHS.SetFloat("_Intensity", 5000.0f);
+        AngelEyeLayout.texture = gameOverVideo;
     } 
 }
