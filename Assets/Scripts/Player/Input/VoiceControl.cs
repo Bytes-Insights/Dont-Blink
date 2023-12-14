@@ -38,7 +38,6 @@ public class VoiceControl : MonoBehaviour
         _stream = await whisper.CreateStream(microphoneRecord);
         _stream.OnResultUpdated += OnResult;
 
-        Debug.Log("READY!");
     }
 
     private void Record(InputAction.CallbackContext ctx)
@@ -47,11 +46,9 @@ public class VoiceControl : MonoBehaviour
         {
             _stream.StartStream();
             microphoneRecord.StartRecord();
-            Debug.Log("Recording");
         }
         else{
             microphoneRecord.StopRecord();
-            Debug.Log("Stopped");
         }
     }
 
