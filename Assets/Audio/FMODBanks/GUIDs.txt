@@ -1,0 +1,17 @@
+{4fc48454-3261-4798-abca-3548be74ff59} bank:/Dont-blink
+{a7ab00eb-b02e-44b4-ba85-b0fb4358d3dd} bank:/Master
+{3fb6203f-c155-08f6-3ccc-3a05b2abd545} bank:/Master.strings
+{ab2d032b-710a-437f-b392-09f73e2c629a} bank:/test
+{3674c9b9-4940-41f6-b89d-a521bfd27e80} bus:/
+{4ef7a9d6-fffe-4c86-8f3d-142e8a16f91d} bus:/Reverb
+{fe33535b-ba28-49fa-840f-9d96c266208f} event:/89
+{571b4548-ce8d-4918-af3e-339bd19f21f3} event:/98
+{36743dee-de36-49c5-9339-bffa6c8ed154} event:/Ringo-sounds
+{8fa44821-ef15-4fbc-b246-8b4a4c06cef0} event:/afraid
+{de725773-d3f8-4c25-ba2c-ccbf0bd9c6e6} event:/flickering-lights
+{3fb9978a-42e0-47fc-b4ad-6610d5063667} event:/intro
+{a1537ecc-6d35-4be1-bf48-85521e39fa61} event:/loading
+{a0fb1cb1-f193-4cbd-8341-c9daed932a3b} event:/radio-static
+{3d0a88c4-06bc-47dc-aa1f-dbab480a8fca} event:/regular-lights
+{aa0f0e7b-c785-4939-8f16-3ceede575af0} event:/rick
+{f0ce90fb-fa2b-4678-8c9f-c13cec230704} event:/ringo-alts
