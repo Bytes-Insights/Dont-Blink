@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
@@ -20,22 +21,22 @@ public class GameOverController : MonoBehaviour
     private Material VHS;
     private RawImage AngelEyeLayout;
     private AudioSource audioData;
+    private bool isActive;
 
     // Start is called before the first frame update
     void Start()
     {
+        isActive = false;
         audioData = GetComponent<AudioSource>();
         //Get VHS Material
         FullScreenPassRendererFeature feature = (FullScreenPassRendererFeature) data.rendererFeatures.Find(renderFeature => (renderFeature.GetType() == typeof(FullScreenPassRendererFeature)));
         VHS = feature.passMaterial;
-
+        VHS.SetFloat("_Intensity", 5000.0f);
         //Get layout 
         AngelEyeLayout = gameOver.GetComponent<RawImage>();
 
         //Deactivate video 
         gameOver.SetActive(false);
-
-        Activate();
     }
 
     // Update is called once per frame
@@ -46,10 +47,14 @@ public class GameOverController : MonoBehaviour
 
     public void Activate()
     {
-        //Freeze player
-        playerControls.enabled = false;
-        //Set white noise
-        StartCoroutine(runAnimation(1f));
+        if(!isActive)
+        {
+            isActive = true;
+            //Freeze player
+            playerControls.enabled = false;
+            //Set white noise
+            StartCoroutine(runAnimation(1f));
+        }
     }
 
     //Activates white noise
@@ -112,5 +117,8 @@ public class GameOverController : MonoBehaviour
         VHS.SetFloat("_Intensity", 9999.0f);
         AngelEyeLayout.color = Color.black;
         AngelEyeLayout.texture = gameOverVideo;
+
+        yield return new WaitForSeconds(noiseTime*3);
+        SceneManager.LoadScene("MainScene");
     } 
 }

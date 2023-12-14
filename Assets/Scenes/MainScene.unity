@@ -645,6 +645,10 @@ PrefabInstance:
       propertyPath: m_ReceiveGI
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4511253283112843723, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: GameOverController
+      value: 
+      objectReference: {fileID: 662050334}
     - target: {fileID: 4561144324749757018, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_ReceiveGI
       value: 2
@@ -683,7 +687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5396085662718506082, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5815855040591160546, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_ReceiveGI
@@ -837,6 +841,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8809700545316072143, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: GameOverController
+      value: 
+      objectReference: {fileID: 662050334}
     - target: {fileID: 8829726183590348309, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.53
@@ -18982,6 +18990,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &662050334 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8173425926352462523, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+  m_PrefabInstance: {fileID: 71595843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662050325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be692ff37bd1d5a4b9b44239550b369d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &667556251
 PrefabInstance:
   m_ObjectHideFlags: 0

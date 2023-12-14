@@ -18,6 +18,8 @@ public class BlinkAngelMovement : MonoBehaviour
     private float openTime = 0F;
     private float jumpScareTime = 0F;
 
+    public GameOverController GameOverController;
+
     void Start()
     {
         agent.isStopped = true;
@@ -162,6 +164,8 @@ public class BlinkAngelMovement : MonoBehaviour
             {
                 // TODO: In the else case, we could trigger the jumpscare I guess?
                 percentageToMove = speedTeleport / remainingDistance;
+            }else{
+                GameOverController.Activate();
             }
 
             Vector3 point = FindPointAtFraction(agent.path.corners, remainingDistance, percentageToMove);
