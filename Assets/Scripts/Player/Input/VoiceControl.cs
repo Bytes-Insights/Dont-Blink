@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Whisper.Utils;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem.Utilities;
 
 public class VoiceControl : MonoBehaviour
@@ -62,9 +63,10 @@ public class VoiceControl : MonoBehaviour
 
     private void OnResult(string result)
     {
-        if(result.Contains("I am not afraid"))
+        if (result.ToLower().Contains("i am not afraid") || result.ToLower().Contains("i'm not afraid"))
         {
-            Debug.Log("correct");
+            Debug.Log("Correct");
+            SceneManager.LoadScene("Congratulations", LoadSceneMode.Single);
         }
     }
 }
