@@ -226,6 +226,8 @@ public class BlinkModality : MonoBehaviour
     {
         if (!resultData.IsSuccessful() || resultData.GetFaceCount() == 0)
         {
+            mediator.SetFaceAmount(0);
+
             if (mediator.FaceTracked())
             {
                 mediator.SetFaceTracked(false);
@@ -238,6 +240,8 @@ public class BlinkModality : MonoBehaviour
 
             return;
         }
+
+        mediator.SetFaceAmount(resultData.GetFaceCount());
 
         if (!mediator.FaceTracked())
         {
