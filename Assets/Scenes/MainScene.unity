@@ -685,6 +685,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5257613288571703388, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: wordsController
+      value: 
+      objectReference: {fileID: 1959453524}
     - target: {fileID: 5293475716184348798, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.x
       value: -66.1
@@ -28873,6 +28877,7 @@ GameObject:
   - component: {fileID: 1959453521}
   - component: {fileID: 1959453520}
   - component: {fileID: 1959453519}
+  - component: {fileID: 1959453524}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -28887,14 +28892,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959453518}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 42da5a5ea2978254d9f1db4238e73818, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 515af341b4975ad469f31b682aa19a37, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: a47829c4e50a1b84993dbbe15c0902ae, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: c6ebe4627fde65f48a09e7ab1e69f82e, type: 3}
   m_SortingOrder: 0
 --- !u!114 &1959453520
 MonoBehaviour:
@@ -28979,6 +28984,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1959453524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959453518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00306b53a8ba59b47a343c23e7cb4396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordsDocument: {fileID: 1959453519}
+  Texture_Title: {fileID: 2800000, guid: b71b9154b7aa45645ba19adff4bc567a, type: 3}
+  Texture_IAm: {fileID: 2800000, guid: 069ead3dffbd54d44bb2490ce8be1c6b, type: 3}
+  Texture_Not: {fileID: 2800000, guid: de27edfde19e0634ea205f5ad4df4a98, type: 3}
+  Texture_Afraid: {fileID: 2800000, guid: 6656f17b2da444a4fa9a8f18c3257bc0, type: 3}
+  Texture_QuestionMarks: {fileID: 2800000, guid: de430c753f6d4fa45b645a353e7864ad, type: 3}
 --- !u!1 &1980359807
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Menu" style="flex-grow: 1; -unity-background-image-tint-color: rgb(0, 0, 0); align-items: center; background-color: rgba(0, 0, 0, 0.55);">
+        <ui:VisualElement name="Title" style="flex-grow: 1; width: 100%; -unity-background-scale-mode: scale-to-fit; -unity-text-align: upper-center; padding-top: 2%; padding-right: 30%; padding-bottom: 2%; padding-left: 30%;">
+            <ui:VisualElement name="CollectedWords" style="flex-grow: 1; width: auto; align-items: center; background-image: url(&apos;project://database/Assets/UI/Words/Collected%20Words.png?fileID=2800000&amp;guid=b71b9154b7aa45645ba19adff4bc567a&amp;type=3#Collected Words&apos;); background-color: rgba(255, 255, 255, 0); -unity-background-scale-mode: scale-to-fit; -unity-text-align: middle-center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; height: auto; justify-content: space-between; max-width: none;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Words" style="flex-grow: 3; width: 100%; flex-direction: column; -unity-text-align: upper-center; height: 0; max-height: 75%;">
+            <ui:VisualElement name="IAM" style="flex-grow: 3; align-items: center; background-image: url(&apos;project://database/Assets/UI/Words/QuestionMarks.png?fileID=2800000&amp;guid=de430c753f6d4fa45b645a353e7864ad&amp;type=3#QuestionMarks&apos;); -unity-text-align: upper-center; -unity-background-scale-mode: scale-to-fit;" />
+            <ui:VisualElement style="flex-grow: 1;" />
+            <ui:VisualElement name="NOT" style="flex-grow: 3; align-items: center; background-image: url(&apos;project://database/Assets/UI/Words/QuestionMarks.png?fileID=2800000&amp;guid=de430c753f6d4fa45b645a353e7864ad&amp;type=3#QuestionMarks&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            <ui:VisualElement style="flex-grow: 1;" />
+            <ui:VisualElement name="AFRAID" style="flex-grow: 3; align-items: center; background-image: url(&apos;project://database/Assets/UI/Words/QuestionMarks.png?fileID=2800000&amp;guid=de430c753f6d4fa45b645a353e7864ad&amp;type=3#QuestionMarks&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            <ui:VisualElement style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

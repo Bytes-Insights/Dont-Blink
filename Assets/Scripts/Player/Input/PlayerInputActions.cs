@@ -263,6 +263,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WordsMenu"",
+                    ""type"": ""Value"",
+                    ""id"": ""a55e25f3-aeb1-4af4-9258-ac1002f14744"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -287,6 +296,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""46a56f30-b832-4c52-9bc8-01385b3eac7f"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WordsMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -304,6 +324,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         // Actions
         m_Actions = asset.FindActionMap("Actions", throwIfNotFound: true);
         m_Actions_Confirm = m_Actions.FindAction("Confirm", throwIfNotFound: true);
+        m_Actions_WordsMenu = m_Actions.FindAction("WordsMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -474,11 +495,13 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Actions;
     private List<IActionsActions> m_ActionsActionsCallbackInterfaces = new List<IActionsActions>();
     private readonly InputAction m_Actions_Confirm;
+    private readonly InputAction m_Actions_WordsMenu;
     public struct ActionsActions
     {
         private @PlayerInputActions m_Wrapper;
         public ActionsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Confirm => m_Wrapper.m_Actions_Confirm;
+        public InputAction @WordsMenu => m_Wrapper.m_Actions_WordsMenu;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -491,6 +514,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Confirm.started += instance.OnConfirm;
             @Confirm.performed += instance.OnConfirm;
             @Confirm.canceled += instance.OnConfirm;
+            @WordsMenu.started += instance.OnWordsMenu;
+            @WordsMenu.performed += instance.OnWordsMenu;
+            @WordsMenu.canceled += instance.OnWordsMenu;
         }
 
         private void UnregisterCallbacks(IActionsActions instance)
@@ -498,6 +524,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Confirm.started -= instance.OnConfirm;
             @Confirm.performed -= instance.OnConfirm;
             @Confirm.canceled -= instance.OnConfirm;
+            @WordsMenu.started -= instance.OnWordsMenu;
+            @WordsMenu.performed -= instance.OnWordsMenu;
+            @WordsMenu.canceled -= instance.OnWordsMenu;
         }
 
         public void RemoveCallbacks(IActionsActions instance)
@@ -528,5 +557,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface IActionsActions
     {
         void OnConfirm(InputAction.CallbackContext context);
+        void OnWordsMenu(InputAction.CallbackContext context);
     }
 }

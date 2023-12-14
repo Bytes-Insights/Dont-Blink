@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 public class PlayerControls : MonoBehaviour
 {
     public PlayerInputActions inputActions;
     public Rigidbody rigidbody;
     public Camera camera;
-
+    
+    public WordsUIController wordsController;
     public float speed = 2F;
     public float lookSensitivity = 25F;
+
+    private InputAction wordMenu;
+    private bool wordMenuShown = false;
 
     void OnEnable()
     {
@@ -22,6 +28,9 @@ public class PlayerControls : MonoBehaviour
 
         inputActions.Camera.Enable();
         inputActions.Movement.Enable();
+
+        wordMenu = inputActions.Actions.WordsMenu;
+        wordMenu.Enable();
     }
 
     void OnDisable()
@@ -63,5 +72,18 @@ public class PlayerControls : MonoBehaviour
     {
         UpdateCamera();
         UpdateMovement();
+
+        if(wordMenu.ReadValue<float>() > 0.5)
+        {
+            wordMenuShown = true;
+        }else{
+            wordMenuShown = false;
+        }
+        WordMenu();
+    }
+
+    void WordMenu()
+    {
+        wordsController.show(wordMenuShown);
     }
 }
