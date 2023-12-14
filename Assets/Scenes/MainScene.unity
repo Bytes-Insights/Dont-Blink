@@ -671,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4959827932916254548, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 4959827932916254548, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.z
@@ -683,7 +683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5293475716184348798, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5293475716184348798, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.z
@@ -699,7 +699,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5482427456282074645, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_BaseOffset
-      value: 1.7
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482427456282074645, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5815855040591160546, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_ReceiveGI
@@ -868,6 +872,10 @@ PrefabInstance:
     - target: {fileID: 8829726183590348309, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829726183590348309, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.9
       objectReference: {fileID: 0}
     - target: {fileID: 8829726183590348309, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: m_LocalPosition.z
