@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement style="flex-grow: 1; width: 100%; height: 100%; margin-top: 0;">
-        <ui:VisualElement name="FaceRecognition" style="flex-grow: 1; width: 10%; height: 10%; -unity-text-align: upper-right; background-image: url(&apos;project://database/Assets/UI/GameUI/FaceRecYES.png?fileID=2800000&amp;guid=578469b29ff0d93428177428bd630c72&amp;type=3#FaceRecYES&apos;); -unity-background-scale-mode: scale-and-crop; right: 0; top: 0; left: 85%; bottom: 0; margin-right: 5%; margin-top: 5%;" />
+        <ui:VisualElement name="FaceRecognition" style="flex-grow: 1; width: 10%; height: 10%; -unity-text-align: upper-right; background-image: url(&apos;project://database/Assets/UI/GameUI/FaceRecYES%201.png?fileID=2800000&amp;guid=603bc0aa2377d3a438ffc5e274ed09f9&amp;type=3#FaceRecYES 1&apos;); -unity-background-scale-mode: scale-and-crop; right: 0; top: 0; left: 85%; bottom: 0; margin-right: 5%; margin-top: 5%;" />
         <ui:VisualElement name="VisualElement" style="flex-grow: 1; height: 70%;" />
         <ui:VisualElement style="flex-grow: 1; height: 20%; flex-direction: row; width: 100%;">
             <ui:VisualElement style="flex-grow: 1; width: 95%;" />

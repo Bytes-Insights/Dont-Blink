@@ -7,6 +7,7 @@ public class AngelVHSEffect : MonoBehaviour
 {
     public UniversalRendererData data;
     public GameOverController gameOver;
+    public VoiceControl voiceController;
 
     private GameObject[] angels;
     
@@ -17,7 +18,7 @@ public class AngelVHSEffect : MonoBehaviour
 
     void Update()
     {
-        if(!gameOver.IsActive())
+        if(!gameOver.IsActive() && !voiceController.IsActive())
         {
             FullScreenPassRendererFeature feature = (FullScreenPassRendererFeature) data.rendererFeatures.Find(renderFeature => (renderFeature.GetType() == typeof(FullScreenPassRendererFeature)));
         

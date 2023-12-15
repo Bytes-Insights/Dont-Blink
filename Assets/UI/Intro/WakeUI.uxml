@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement style="flex-grow: 1;" />
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Scripts/UI/Blinks/icons8-eye-100%20(1).png?fileID=2800000&amp;guid=b82a79ed653b3d04d824247c961b9ca3&amp;type=3#icons8-eye-100 (1)&apos;); -unity-background-scale-mode: scale-to-fit;" />
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/UI/Intro/WAKE%20UP!.png?fileID=2800000&amp;guid=3bcfe09ddaae8834c9db451f57a8dcac&amp;type=3#WAKE UP!&apos;); -unity-background-scale-mode: scale-to-fit; width: 30%; margin-left: 36%; margin-right: 30%;" />
+        <ui:VisualElement style="flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>

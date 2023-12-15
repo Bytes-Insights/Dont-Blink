@@ -5,6 +5,7 @@ using Whisper.Utils;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem.Utilities;
+using UnityEngine.Rendering.Universal;
 
 public class VoiceControl : MonoBehaviour
 {
@@ -12,9 +13,15 @@ public class VoiceControl : MonoBehaviour
     public MicrophoneRecord microphoneRecord;
     public PlayerInputActions inputActions;
     public GameObject indicator;
+    public UniversalRendererData data;
+    public AudioClip noise;
+    public AudioClip endClip;
 
     private Whisper.WhisperStream _stream;
     private InputAction confirm;
+    private AudioSource source;
+    private Material VHS;
+    private bool isActive = false;
 
     public void Activate()
     {
@@ -40,6 +47,9 @@ public class VoiceControl : MonoBehaviour
 
     private async void Start()
     {
+        FullScreenPassRendererFeature feature = (FullScreenPassRendererFeature) data.rendererFeatures.Find(renderFeature => (renderFeature.GetType() == typeof(FullScreenPassRendererFeature)));
+        VHS = feature.passMaterial;
+        source = GetComponent<AudioSource>();
         indicator.SetActive(false);
         _stream = await whisper.CreateStream(microphoneRecord);
         _stream.OnResultUpdated += OnResult;
@@ -65,8 +75,31 @@ public class VoiceControl : MonoBehaviour
     {
         if (result.ToLower().Contains("i am not afraid") || result.ToLower().Contains("i'm not afraid"))
         {
-            Debug.Log("Correct");
-            SceneManager.LoadScene("Congratulations", LoadSceneMode.Single);
+            StartCoroutine(runAnimation());
         }
+    }
+
+    IEnumerator runAnimation()
+    {
+        isActive = true;
+
+        VHS.SetFloat("_Intensity", 0.0f);
+        source.clip = endClip;
+        source.Play();
+        yield return new WaitForSeconds(5.0f);
+
+        source.volume  = 0.05f;
+        source.clip = noise;
+        source.Play();
+        VHS.SetFloat("_Intensity", 9999.0f);
+        yield return new WaitForSeconds(3.0f);
+        source.Stop();
+        VHS.SetFloat("_Intensity", 7000.0f);
+        SceneManager.LoadScene("Congratulations", LoadSceneMode.Single);
+    }
+
+    public bool IsActive()
+    {
+        return isActive;
     }
 }
