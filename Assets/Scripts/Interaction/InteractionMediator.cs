@@ -79,6 +79,7 @@ public class InteractionMediator : MonoBehaviour
             {
                 audioSource.clip = blinkingAudio; 
                 Debug.Log("HEY!");
+                audioSource.volume = 1.0f;
                 audioSource.Play();
             }
         }
