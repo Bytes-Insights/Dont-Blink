@@ -24807,6 +24807,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: ce7567e71681a114c867ab55d0b42252, type: 3}
     - target: {fileID: 7487782180561203282, guid: c556e12a77e52ac489c76317f45884a7, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1648813201}
+    - target: {fileID: 7487782180561203282, guid: c556e12a77e52ac489c76317f45884a7, type: 3}
       propertyPath: endClip
       value: 
       objectReference: {fileID: 8300000, guid: e4a0c00fc7edbaf43b04e792d0db2160, type: 3}
@@ -24814,6 +24818,14 @@ PrefabInstance:
       propertyPath: whisper
       value: 
       objectReference: {fileID: 71595847}
+    - target: {fileID: 7487782180561203282, guid: c556e12a77e52ac489c76317f45884a7, type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 146493727}
+    - target: {fileID: 7487782180561203282, guid: c556e12a77e52ac489c76317f45884a7, type: 3}
+      propertyPath: rawImage
+      value: 
+      objectReference: {fileID: 146493729}
     - target: {fileID: 7487782180561203282, guid: c556e12a77e52ac489c76317f45884a7, type: 3}
       propertyPath: microphoneRecord
       value: 
@@ -27900,6 +27912,8 @@ GameObject:
   - component: {fileID: 1648813199}
   - component: {fileID: 1648813198}
   - component: {fileID: 1648813203}
+  - component: {fileID: 1648813205}
+  - component: {fileID: 1648813204}
   m_Layer: 5
   m_Name: CanvasGameUI
   m_TagString: Untagged
@@ -28020,6 +28034,41 @@ MonoBehaviour:
   document: {fileID: 1648813198}
   Texture_OK: {fileID: 2800000, guid: 603bc0aa2377d3a438ffc5e274ed09f9, type: 3}
   Texture_NO: {fileID: 2800000, guid: dd64c7438bbb5f744b6d19077c772521, type: 3}
+--- !u!114 &1648813204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648813197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1648813205
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648813197}
+  m_CullTransparentMesh: 1
 --- !u!64 &1698341000
 MeshCollider:
   m_ObjectHideFlags: 0
