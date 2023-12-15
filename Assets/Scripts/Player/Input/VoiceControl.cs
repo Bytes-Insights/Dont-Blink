@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem.Utilities;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class VoiceControl : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class VoiceControl : MonoBehaviour
     public UniversalRendererData data;
     public AudioClip noise;
     public AudioClip endClip;
+    public GameObject gameOver;
+    public RawImage rawImage;
 
     private Whisper.WhisperStream _stream;
     private InputAction confirm;
@@ -53,7 +57,6 @@ public class VoiceControl : MonoBehaviour
         indicator.SetActive(false);
         _stream = await whisper.CreateStream(microphoneRecord);
         _stream.OnResultUpdated += OnResult;
-
     }
 
     private void Record(InputAction.CallbackContext ctx)
@@ -87,10 +90,13 @@ public class VoiceControl : MonoBehaviour
         source.clip = endClip;
         source.Play();
         yield return new WaitForSeconds(5.0f);
-
+        gameOver.SetActive(true);
+        rawImage.texture = null;
         source.volume  = 0.05f;
         source.clip = noise;
         source.Play();
+
+        rawImage.color = Color.black;
         VHS.SetFloat("_Intensity", 9999.0f);
         yield return new WaitForSeconds(3.0f);
         source.Stop();
