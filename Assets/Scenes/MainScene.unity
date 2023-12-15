@@ -566,6 +566,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 96771090607719505, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 71595848}
+    - target: {fileID: 96771090607719505, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+      propertyPath: blinkingAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: fe1769bf7630fde4ebaa7b63ceb9c752, type: 3}
+    - target: {fileID: 96771090607719505, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: faceController
       value: 
       objectReference: {fileID: 1648813203}
@@ -691,7 +699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4511253283112843723, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: speedTeleport
-      value: 4.25
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 4511253283112843723, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: GameOverController
@@ -947,7 +955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8809700545316072143, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: speedTeleport
-      value: 4.25
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 8809700545316072143, guid: c0928b432549d00459cd9b99746e7744, type: 3}
       propertyPath: GameOverController
@@ -1028,6 +1036,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9370225a2ca94276b870d5f87b0db55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &71595848 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1158789856617772837, guid: c0928b432549d00459cd9b99746e7744, type: 3}
+  m_PrefabInstance: {fileID: 71595843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &81587056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24935,7 +24948,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.12
+  m_Intensity: 0.51
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

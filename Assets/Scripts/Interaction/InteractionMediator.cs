@@ -14,6 +14,8 @@ public class InteractionMediator : MonoBehaviour
     private float faceDirectionalWeight = 0F;
     private int faceCount = 0;
     public FaceRecognitionController faceRecognitionController;
+    public AudioSource audioSource;
+    public AudioClip blinkingAudio;
 
     // --- EVENT DEFINITIONS. ---
 
@@ -73,6 +75,12 @@ public class InteractionMediator : MonoBehaviour
         if (OnEyesStatusChanged != null)
         {
             OnEyesStatusChanged.Invoke(closed);
+            if(closed)
+            {
+                audioSource.clip = blinkingAudio; 
+                Debug.Log("HEY!");
+                audioSource.Play();
+            }
         }
         {
             Debug.LogWarning("Eye status changed but no event handler was present!");
