@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class BlinkingLight : MonoBehaviour
 {
+    Renderer renderer;
     Light myLight;
     float timer;
     bool flicker;
     int flickers;
     Color originalColor;
     Material myMaterial;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,7 @@ public class BlinkingLight : MonoBehaviour
         flicker = false;
         flickers = 0;
         myLight = GetComponent<Light>();
-        Renderer renderer = transform.parent.GetComponent<Renderer>();
+        renderer = transform.parent.GetComponent<Renderer>();
         if (renderer != null)
         {
             myMaterial = renderer.material;
@@ -28,12 +30,15 @@ public class BlinkingLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (flicker)
-            Flicker(Random.Range(2, 5));
-        else
-            Sleep(Random.Range(1f, 3f));
-
-        
+        if(renderer.isVisible)
+        {
+            myLight.enabled = true;
+            if (flicker)
+                Flicker(Random.Range(2, 5));
+            else
+                Sleep(Random.Range(1f, 3f));
+        }else
+            myLight.enabled = false;
     }
 
     void Flicker(int times)
