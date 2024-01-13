@@ -36,7 +36,7 @@ public class PlayerControls : MonoBehaviour
     void OnDisable()
     {
         Cursor.lockState = CursorLockMode.None;
-
+        
         inputActions.Camera.Disable();
         inputActions.Movement.Disable();
     }
@@ -58,9 +58,9 @@ public class PlayerControls : MonoBehaviour
     void UpdateCamera()
     {
         float lookSpeed = lookSensitivity;
-        float horizontal = inputActions.Camera.Horizontal.ReadValue<float>() * lookSpeed;
+        float horizontal = Mathf.Min(inputActions.Camera.Horizontal.ReadValue<float>() * lookSpeed);
         float vertical = inputActions.Camera.Vertical.ReadValue<float>() * lookSpeed;
-
+        Debug.Log(horizontal);
         xRot -= vertical;
         xRot = Mathf.Clamp(xRot, -90F, 90F);
 
