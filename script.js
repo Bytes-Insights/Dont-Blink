@@ -14,9 +14,7 @@ const r0 = r * 0.35;
 
 const hSVG = +window.getComputedStyle(svg).height.slice(0,-2);
 const hAttrSVG = +svg.getAttribute('height');
-const x0_svg = svg.getBoundingClientRect().x; console.log(x0_svg);
-
-console.log(hSVG, hAttrSVG);
+const x0_svg = svg.getBoundingClientRect().x; 
 
 const factor = hAttrSVG / hSVG;
 
@@ -28,8 +26,6 @@ paths.forEach(path => {
     const d = path.getAttribute("d");
     pathsData.push(d);
 })
-
-console.log(paths, nPaths, pathsData);
 
 const theta = Math.PI * 2 / (nPaths);
 
@@ -46,8 +42,6 @@ for (let i = 0; i < nPaths; i++) {
     points.push({x1,y1,x2,y2});
 
 }
-
-console.log(points);
 
 paths.forEach( (path,i) => {
 
@@ -66,8 +60,6 @@ paths.forEach( (path,i) => {
     const desiredPath = `M ${x1} ${y1} L ${xm} ${ym} L ${x2} ${y2}`;
 
     path.setAttribute("d", desiredPath);
-
-    console.log(desiredPath);
 
     //path.currentPath = desiredPath;
 
