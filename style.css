@@ -13,13 +13,33 @@ body {
 }
 
 .above-the-fold {
-    background-image: url(/web-assets/dont-blink.svg);
+    /*background-image: url(/web-assets/dont-blink.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center center;*/
     width: 100%;
     height: 100svh;
-    background-color: #222;
+    background-color: black; /*#222;*/
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+.above-the-fold > * {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.above-the-fold svg {
+
+    max-height: 90vh;
+    max-width: 90vw;
+
+}
+
+.dont-blink path {
+    opacity: 1;
 }
 
 /* TYPOGRAPHY */
