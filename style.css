@@ -58,6 +58,32 @@ body {
 
 }
 
+figure.users-imgs {
+    padding: 3rem 1rem;
+    margin: 3rem 0;
+}
+
+.gallery {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+figcaption {
+    text-align: center;
+    font-size: .8em;
+    margin-top: 1rem;
+}
+
+.main-text .gallery > img {
+    width: 300px;
+
+}
+
 a[download].link-demo {
     display: block;
     width: fit-content;
@@ -176,6 +202,10 @@ a[download].link-demo:visited {
     text-align: center;
     margin: .2em 0;
     font-size: .8em;
+}
+
+.team-container p {
+    max-width: 260px;
 }
 
 
