@@ -24,6 +24,7 @@ body {
     grid-template-columns: 100%;
     grid-template-rows: 100%;
     place-items: center;
+    position: relative;
 }
 
 .above-the-fold > * {
@@ -42,10 +43,39 @@ body {
     color: white;
     font-size: 2rem;
     font-weight: bold;
-    margin-top: 90vh;
     opacity: 0;
     animation: blink 2s ease-out 5s infinite;
     font-family: monospace;
+    text-align: center;
+    margin: .5rem 0 1rem;
+}
+
+.above-the-fold .wrapper-intro {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+a[download].link-demo {
+    display: block;
+    width: fit-content;
+    margin: .5rem auto;
+    background-color: gold;
+    text-align: center;
+    font-family: Poppins;
+    padding: .5em .75em;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: .9em;
+    font-weight: 400;
+    color: black;
+
+}
+
+a[download].link-demo:visited {
+    color: black;
 }
 
 .dont-blink path {
@@ -118,6 +148,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1rem auto;
 }
 
 /* TEAM */
